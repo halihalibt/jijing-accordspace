@@ -1,0 +1,19 @@
+{
+  "name": "jijing-accordspace",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node tests/all.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "dependencies": {
+    "genlayer-js": "1.1.8",
+    "viem": "2.38.5"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "jsdom": "27.0.1"
+  }
+}
