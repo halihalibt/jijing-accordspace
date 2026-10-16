@@ -1,39 +1,32 @@
 {
   "canonical_repository": "https://github.com/halihalibt/accord-space-genlayer",
-  "canonical_commit": "ceaef239fb4792bfb921f562cb94c1b472338be2",
+  "canonical_commit": "cc13a2437656a074ae1fac9e061005f29aa73644",
   "canonical_source": "contracts/accord_space.py",
   "canonical_sha256": "84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72",
-  "visual_original_html_sha256": "a20a4a00e9fd42c4a3a7a5dcb929dfd73b92a64eede2f3f2641e1219ed3873bd",
-  "reused_assets": {
-    "assets/ice-jade-environment.webp": "54d26deb5c9ec229a56ab7cfb4d5f6a71a4d43213d1c1bb7a9741b0c516a87f4",
-    "assets/jade-original.ttf": "4ce5036fce148243d385e4b8c1986b80104ba2a13549dfadcb8ca3348032f462",
-    "src/visual-original.html": "82928eeb9ea59e1f3c2fbe8f981f5e7c07a5e57c8f3eb0732c5724305f6a69ae"
-  },
-  "visual_transform": "Approved source and assets remain immutable; derived build extracts original scene styles, replaces the product panel and applies scripts/enhance-scene.mjs for resolution, restrained magnification and sword/echo hooks; src/flight.js adds local scene interactions.",
   "chain_id": 61999,
   "rpc": "https://studio.genlayer.com/api",
-  "deployed": true,
-  "real_model_execution": false,
-  "portal_submitted": false,
-  "sdk": "genlayer-js@1.1.8",
-  "second_world": {
-    "asset": "assets/inverted-star-sea.webp",
-    "sha256": "e23b90fcbd7790b597d70a115d7a9c32df2a9db3389e0ef54d0e8a6570f5d6b6",
-    "dimensions": [
-      1672,
-      941
-    ],
-    "generation": "built-in image generation",
-    "prompt": "assets/INVERTED_STAR_SEA_PROMPT.md",
-    "behavior": "local three-level sword ascension, cataclysm, second world and replay; independent of contract state"
+  "deployment": {
+    "address": "0x0F4A3Aa94A55ef41e8f4108a1513c7a4cB8e1ffe",
+    "transaction": "0x38396b6bdb9490404d8edb0c3da172e1317555675d6b408274de91c0cb97463b",
+    "finality": "FINALIZED",
+    "execution": "SUCCESS",
+    "consensus": "MAJORITY_AGREE"
   },
-  "previous_failed_source_sha256": "f99a6395f539c718027f2b6ab39801ccc22c2c0197fb7cbc27307b64563e886f",
-  "deployment_attempts": 2,
-  "successful_deployments": 1,
-  "last_deployment_outcome": "FINALIZED / MAJORITY_AGREE / SUCCESS",
-  "deployment_receipt_verified": true,
-  "deployment_address": "0x0F4A3Aa94A55ef41e8f4108a1513c7a4cB8e1ffe",
-  "session_readback_verified": false,
-  "current_session_id": "jijing_20261016_1442",
-  "evidence_scope": "user-exported finalized receipts; public session readback pending"
+  "session": {
+    "id": "jijing_20261016_1442",
+    "final_status": "COMMITTED",
+    "revision": 1,
+    "final_world_id": 1,
+    "final_assignment": {"x": 1}
+  },
+  "visual_assets": {
+    "ice_jade_environment": "assets/ice-jade-environment.webp",
+    "second_world": "assets/inverted-star-sea.webp",
+    "jade_typeface": "assets/jade-original.ttf"
+  },
+  "source_copy": {
+    "path": "contracts/accord_space.py",
+    "byte_identical_to_canonical": true
+  },
+  "portal_submitted": false
 }

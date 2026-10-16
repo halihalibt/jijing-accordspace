@@ -1,41 +1,21 @@
-# Projects submission draft
+# Projects submission reference
 
-Status: NOT_READY_FOR_PORTAL — real Stable E2E and fresh visual/browser acceptance open.
+**Status: READY FOR PORTAL**
 
-Name: Jijing / 霁境 — AccordSpace
+**Name:** 霁境 / Jijing — The Jade Between
 
-Repository: https://github.com/halihalibt/jijing-accordspace
+**Repository:** https://github.com/halihalibt/jijing-accordspace
 
-Category suggestions: Social / Coordination; AI and Intelligent Contracts.
-Select only categories actually available on the current Portal.
+**Product:** Jijing is an ice-jade spatial planning experience built around AccordSpace. Participants bring their own conditions to a common finite domain, inspect conflicts with concrete witnesses, relax only conditions they own, and approve one shared plan together. The spatial interface makes those protocol states tangible through a cinematic jade environment, responsive interaction, bilingual controls, and a no-wallet tutorial.
 
-Description:
+**Real deployment:** Stable Studionet, chain 61999, contract `0x0F4A3Aa94A55ef41e8f4108a1513c7a4cB8e1ffe`.
 
-Jijing is a spatial planning experience set inside an ice-jade sanctuary.
-Participants bring their own conditions to a common finite domain, explore
-conflicts with concrete witnesses, decide whether to waive only their own
-conditions, and approve a shared plan together. The original jade scene,
-touch interaction, spatial transition and continuous user-enabled ambience
-make the coordination process approachable without hiding its state.
+**Real session:** `jijing_20261016_1442` reached **COMMITTED · R1**, world **#1 / x=1**, after finalized condition seals, GenLayer compilation, an owner-only waiver, and two finalized approvals.
 
-A no-wallet tutorial demonstrates a three-person conflict that cannot be
-detected by checking pairs alone. It uses fixed rules and is explicitly
-labeled as an offline demonstration. The real-session interface uses public
-final-state reads and wallet-signed calls to AccordSpace on Stable Studionet.
-The complete canonical contract source is included in this repository and
-checked byte-for-byte against the Intelligent Contracts repository.
+**Evidence:** `evidence/FINAL_E2E_20261016.json` contains the recorded transaction-level evidence. The complete canonical Intelligent Contract source is included at `contracts/accord_space.py` and is byte-for-byte identical to Repository A.
 
-Engineering tests pass; real chain execution is still pending. Do not describe
-the demonstration as a real AI committee, deployed product or successful E2E.
+**Live preview:** https://halihalibt.github.io/jijing-accordspace/
 
-Before submission, attach actual public demo URL, desktop/mobile captures,
-deployed address, final consensus receipts and readback. Do not invent values.
-Do not upload screenshots of an unrelated “Hollow Mirror” project.
+The tutorial is an offline product demonstration with fixed rules; it is not represented as a real AI committee. The real-session path uses the deployed contract and wallet-signed operations.
 
-Canonical copy SHA256:
-84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72
-
-No Portal action was performed.
-
-Deployment recovery: first attempt FINALIZED / ERROR / invalid_contract; header
-corrected, awaiting a verified new deployment. NOT_READY_FOR_PORTAL.
+Select only categories currently available on the Portal; do not infer acceptance from the repository.
