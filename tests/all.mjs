@@ -2,4 +2,5 @@
 // registered subtests. Direct execution emits every actual assertion group.
 import './engine.test.mjs';
 import './wallet.test.mjs';
+import './receipt.test.mjs';
 import './dom.test.mjs';

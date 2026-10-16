@@ -3,12 +3,12 @@
   "manifest": {
     "scene": "scene.0aa0f62d685b.css",
     "product": "product.ffb899dd3811.css",
-    "ui": "ui.b41cd00018a8.js",
-    "app": "app.7a7fdb327d74.js"
+    "ui": "ui.46b43d63c5dd.js",
+    "app": "app.ec4b69cc6403.js"
   },
   "bundles": {
     "ui": {
-      "bytes": 42988,
+      "bytes": 44137,
       "entry": "src/bootstrap.js",
       "source_inputs": [
         "src/i18n.js",
@@ -18,11 +18,12 @@
       ]
     },
     "app": {
-      "bytes": 550327,
+      "bytes": 551955,
       "entry": "src/app.js",
       "source_inputs": [
         "src/engine.js",
         "src/client.js",
+        "src/receipt.js",
         "src/app.js"
       ]
     }

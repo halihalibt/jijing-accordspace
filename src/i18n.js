@@ -1,5 +1,9 @@
 // UI copy only. Contract/user text, form values, receipts and identifiers are never translated.
 const copy = `
+交易已最终确认，但执行失败。|||Transaction finalized, but execution failed.
+签名范围已清零，请保留记录并先修复原因；不要重复部署。|||Signing allowance cleared. Save the record and fix the cause before another deployment.
+交易已最终确认，执行成功且多数共识一致。部署后仍须核验源码与协议；会话操作后重新读取状态。|||Transaction finalized with successful execution and majority agreement. Verify deployment source and protocol, or read the updated session.
+交易已最终确认，但执行成功或共识证据不足。保持写入锁定，请导出记录核验。|||Transaction finalized, but execution or consensus evidence is incomplete. Writes remain locked. Export the record for verification.
 收集玉音 · 升级飞剑|||Collect an echo. Upgrade your sword.
 先收集空中的三枚玉音。每一枚都会进化你的飞剑。第三枚会打破这方天地。|||Find three floating echoes. Each one evolves your sword. The third breaks the world.
 初醒 · 一线玉锋|||AWAKENED / JADE EDGE

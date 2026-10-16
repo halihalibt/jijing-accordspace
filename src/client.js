@@ -2,7 +2,7 @@ import {createClient} from 'genlayer-js';
 import {studionet} from 'genlayer-js/chains';
 import {TransactionHashVariant} from 'genlayer-js/types';
 import {parseExactJson} from './engine.js';
-export const SOURCE_HASH='f99a6395f539c718027f2b6ab39801ccc22c2c0197fb7cbc27307b64563e886f';
+export const SOURCE_HASH='84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72';
 export const RPC='https://studio.genlayer.com/api';
 export const CHAIN_ID=61999;
 if(studionet.id!==CHAIN_ID||studionet.rpcUrls.default.http[0]!==RPC)throw Error('SDK network mismatch');
@@ -25,6 +25,7 @@ export function makeWallet(provider,onChange=()=>{},deps={}){
   }
   return {
     get account(){return account;},get remaining(){return remaining;},
+    disarm(){remaining=0;},
     async connect(){
       remaining=0;
       const addresses=await provider.request({method:'eth_requestAccounts'});

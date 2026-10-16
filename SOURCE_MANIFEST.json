@@ -1,8 +1,8 @@
 {
   "canonical_repository": "https://github.com/halihalibt/accord-space-genlayer",
-  "canonical_commit": "b08b408d425054baa4d679d959a289e8a7d5e550",
+  "canonical_commit": "ceaef239fb4792bfb921f562cb94c1b472338be2",
   "canonical_source": "contracts/accord_space.py",
-  "canonical_sha256": "f99a6395f539c718027f2b6ab39801ccc22c2c0197fb7cbc27307b64563e886f",
+  "canonical_sha256": "84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72",
   "visual_original_html_sha256": "a20a4a00e9fd42c4a3a7a5dcb929dfd73b92a64eede2f3f2641e1219ed3873bd",
   "reused_assets": {
     "assets/ice-jade-environment.webp": "54d26deb5c9ec229a56ab7cfb4d5f6a71a4d43213d1c1bb7a9741b0c516a87f4",
@@ -26,5 +26,9 @@
     "generation": "built-in image generation",
     "prompt": "assets/INVERTED_STAR_SEA_PROMPT.md",
     "behavior": "local three-level sword ascension, cataclysm, second world and replay; independent of contract state"
-  }
+  },
+  "previous_failed_source_sha256": "f99a6395f539c718027f2b6ab39801ccc22c2c0197fb7cbc27307b64563e886f",
+  "deployment_attempts": 1,
+  "successful_deployments": 0,
+  "last_deployment_outcome": "FINALIZED / MAJORITY_AGREE / ERROR / invalid_contract"
 }

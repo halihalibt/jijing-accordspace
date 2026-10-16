@@ -1,6 +1,6 @@
 import fs from 'node:fs';import crypto from 'node:crypto';
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
-const expected='f99a6395f539c718027f2b6ab39801ccc22c2c0197fb7cbc27307b64563e886f';
+const expected='84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72';
 for(const p of ['contracts/accord_space.py','dist/contracts/accord_space.py'])if(hash(p)!==expected)throw Error('canonical source mismatch: '+p);
 if(hash('assets/ice-jade-environment.webp')!=='54d26deb5c9ec229a56ab7cfb4d5f6a71a4d43213d1c1bb7a9741b0c516a87f4')throw Error('Original scene mismatch');
 if(hash('src/visual-original.html')!=='82928eeb9ea59e1f3c2fbe8f981f5e7c07a5e57c8f3eb0732c5724305f6a69ae')throw Error('Original reference changed');

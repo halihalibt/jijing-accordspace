@@ -14,6 +14,32 @@ function page(reduced=false){
  const scene=[...w.document.querySelectorAll('script')].find(s=>!s.src&&s.type!=='application/json');w.eval(scene.textContent);
  return {dom,w,frames,q:s=>w.document.querySelector(s),flush:()=>new Promise(r=>setTimeout(r,25)),frame:now=>{const callbacks=frames.splice(0);callbacks.forEach(cb=>cb(now));}};
 }
+test('served app shows the recorded deployment error and prevents another unarmed signature',async()=>{
+ const {dom,w,q,flush}=page();
+ const actual=JSON.parse(fs.readFileSync('evidence/deployment-failure-20261016.json','utf8')).receipt;
+ let sends=0,reads=0;
+ w.okxwallet={on(){},async request({method}){
+  if(['eth_accounts','eth_requestAccounts'].includes(method))return [actual.from_address];
+  if(method==='eth_chainId')return '0xf22f';
+  sends++;throw Error('Unexpected signing request');
+ }};
+ w.fetch=async(_url,options)=>{const body=JSON.parse(options.body);reads++;
+  assert.equal(body.method,'eth_getTransactionByHash');
+  return new Response(JSON.stringify({jsonrpc:'2.0',id:body.id,result:{...actual,status:'FINALIZED'}}),{status:200,headers:{'Content-Type':'application/json'}});
+ };
+ w.eval(fs.readFileSync('dist/'+manifest.ui,'utf8'));
+ w.eval(fs.readFileSync('dist/'+manifest.app,'utf8'));await flush();
+ q('[data-language=zh]').click();q('#connect-wallet').click();await flush();
+ q('#scope-ack').checked=true;q('#tx-budget').value='3';q('#arm-wallet').click();await flush();
+ assert.equal(q('#deploy').disabled,false);
+ q('#receipt-hash').value=actual.hash;q('#check-receipt').click();await flush();await flush();
+ assert.match(q('#notice').textContent,/执行失败/);assert.match(q('#notice').textContent,/invalid_contract/);
+ assert.equal(q('#notice').classList.contains('error'),true);assert.equal(q('#deploy').disabled,true);
+ assert.equal(reads,1);assert.equal(sends,0);
+ q('[data-language=en]').click();await flush();assert.match(q('#notice').textContent,/execution failed/);
+ assert.match(q('#receipt-result').textContent,/MAJORITY_AGREE/);
+ dom.window.close();
+});
 test('served browser bundles: English before scripts; independent language UI; complete negotiation; no Node globals',async()=>{
  const {dom,w,q,flush}=page();
  // This evaluates the shipped bundles in the DOM's browser realm, not Node imports.

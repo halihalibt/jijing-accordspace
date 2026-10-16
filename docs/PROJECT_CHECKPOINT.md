@@ -1,44 +1,32 @@
-# Jijing product checkpoint — 2026-10-16 Asia/Shanghai
+# Jijing checkpoint — deployment header recovery
 
-Scene V4: three sword ascensions, automatic megasword hit/fragment transition,
-generated second world, gravity inversion, sword rain and replay.
-See UI_REWORK_V4.md for evidence and runtime limits.
+2026-10-16 Asia/Shanghai. Current canonical SHA256:
+`84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72`. Source comes from Repository A, with identical bytes.
+See DEPLOYMENT_HEADER_FIX.md for the actual failure and recovery details.
 
-Scene V3: fingerprinted assets, static English HTML, independent language UI,
-crisper rendering, sword tracking/flight and replayable jade echoes.
-See UI_REWORK_V3.md for evidence and limitations.
+Original scene, V4 sword upgrades, giant slash, second world, EN/中文 controls
+and default-English UI are preserved. Only contract packaging and transaction
+result interpretation changed. A finalized execution error is visibly failed,
+clears the signing allowance, and cannot silently pass as deployment success.
+Raw receipt stays intact; every new signing request logs its source hash.
 
-Workspace V2 rework: default-English EN / 中文 UI, near-full viewport, larger
-type and opaque jade surfaces. See UI_REWORK_V2.md for cause, changes and limits.
+22 frontend assertion groups and A's 49 tests + 36 SDK subtests pass.
+Native lint/semantic checks/schema pass. Shipped bundle synthetic DOM checks
+cover the actual deployment error, bilingual notice and no extra signing.
+Real browser/GPU/audio acceptance is not provided by those tests. The managed
+browser-control skill is unavailable; no substitute preview server was started.
 
-Repository A main reviewed/merged: b08b408d425054baa4d679d959a289e8a7d5e550.
-PR #1 merged. No canonical contract changes were required.
+One user-signed deployment finalized with ERROR / invalid_contract and five
+AGREE votes. No successful deployment, actual AI compilation or Portal action.
+No recovery transaction was sent during this repair. Full-source RPC preflight
+was blocked by automatic approval review; local checks were used instead.
 
-Repository B: https://github.com/halihalibt/jijing-accordspace .
+User authorized autonomous repair and continuation. New batch maximum 8 wallet
+requests, including corrected deployment, with failures counted; lifetime total
+would be 9 including the original failure. Arm 1 request at a time and obtain
+actual user OKX signatures. Verify each receipt and final readback before the
+next write. No automatic Retry/Appeal/resend. Stable 61999 only, cash zero.
 
-Original visual restored from the Phase 1 handoff and reused directly, including
-the original WebP, font subset, shader, touch/hold/drag controls and ambience.
-Panel content is now the AccordSpace product, not the old text-shortening demo.
-
-Completed: fixed tutorial, exact finite solver and all witnesses, owner-only
-waiver, unanimous confirmation, exact Python/JS state-hash parity, final-state
-read client, source verification, wallet-only writes, request budgeting,
-account/chain invalidation, SDK fallback-send guard, manual receipt export,
-source copy, build and submission drafts.
-
-17 product assertion groups pass, including 4,369 set-oracle families and
-served-bundle synthetic DOM lifecycle, flight and echoes. A: 46 tests + 36 SDK subtests, lint and ABI pass.
-Synthetic DOM is not a fresh browser render. The managed preview browser skill
-is unavailable in this run; no preview server or substitute browser was started.
-Desktop/mobile appearance, real WebGL/audio and wallet signing need acceptance.
-
-Stable eth_chainId returned 61999 on 2026-10-15 21:28:34 UTC. Schema preflight
-via Node failed because fetch was unavailable; the read-only HTTP fallback
-received 403. Stop probing. Real runner/model compatibility is not certified.
-
-No signatures, deployments, transactions, Appeal, Retry or Portal submission.
-Do not repeat originality research or rebuild another visual direction.
-Resume with actual remote heads, SOURCE_MANIFEST.json and DEPLOYMENT_RUNBOOK.md.
-Next irreducible step is local Chrome + two user-controlled wallets and an
-explicit concrete request range. Recommended conflict path is 8 total requests,
-but this file is a prepared plan, not a record of signed authorization.
+Repository A: https://github.com/halihalibt/accord-space-genlayer
+Repository B: https://github.com/halihalibt/jijing-accordspace
+Resume with actual heads, SOURCE_MANIFEST.json and DEPLOYMENT_RUNBOOK.md.

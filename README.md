@@ -69,7 +69,7 @@ Merged source commit: `b08b408d425054baa4d679d959a289e8a7d5e550`.
 identical bytes, including its deterministic core, compiler prompt and native
 adapter. It is not a wrapper. SHA256:
 
-`f99a6395f539c718027f2b6ab39801ccc22c2c0197fb7cbc27307b64563e886f`
+`84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72`
 
 The copy is checked in source and build output. See `SOURCE_MANIFEST.json`,
 `docs/DEPLOYMENT_RUNBOOK.md`, `docs/SUBMISSION_PROJECTS.md` and
@@ -86,3 +86,11 @@ no authority over a real session. The frontend world is never participant-editab
 
 Only Stable Studionet, chain 61999, `https://studio.genlayer.com/api`.
 Zero cash; Faucet GEN only. See LICENSE and asset notices.
+
+## Deployment recovery
+
+The first deployment finalized with execution ERROR / invalid_contract. The
+leading runtime configuration was corrected without changing contract logic.
+Finality, execution and consensus are now checked separately in the workspace.
+See [repair evidence](docs/DEPLOYMENT_HEADER_FIX.md); no successful deployment
+or real AI compilation is claimed yet.

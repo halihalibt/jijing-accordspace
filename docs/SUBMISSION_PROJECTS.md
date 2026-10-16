@@ -33,6 +33,9 @@ deployed address, final consensus receipts and readback. Do not invent values.
 Do not upload screenshots of an unrelated “Hollow Mirror” project.
 
 Canonical copy SHA256:
-f99a6395f539c718027f2b6ab39801ccc22c2c0197fb7cbc27307b64563e886f
+84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72
 
 No Portal action was performed.
+
+Deployment recovery: first attempt FINALIZED / ERROR / invalid_contract; header
+corrected, awaiting a verified new deployment. NOT_READY_FOR_PORTAL.
