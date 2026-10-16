@@ -1,5 +1,11 @@
 // UI copy only. Contract/user text, form values, receipts and identifiers are never translated.
 const copy = `
+寻三缕玉音|||Trace three jade echoes
+三音已合 · 再御剑一程|||Three echoes, one resonance. Fly again.
+再听一次 ↺|||Listen again ↺
+Jade echoes|||Jade echoes
+Trace the first jade echo|||Trace the first jade echo
+
 ACCORDSPACE / 共 同 的 边 界|||ACCORDSPACE / THE COMMON GROUND
 合意，方可成境。|||A space for agreement.
 合上玉简|||Close workspace
@@ -223,7 +229,7 @@ ID 已变更，请重新读取。|||ID changed. Read the session again.
 是|||Yes
 否|||No
 不可行方案|||This plan is not feasible
-`.trim().split('\n').map(line=>line.split('|||'));
+`.trim().split('\n').filter(line=>line.includes('|||')).map(line=>line.split('|||'));
 const en=new Map(copy), keys=[...en.keys()].sort((a,b)=>b.length-a.length);
 const matcher=new RegExp(keys.map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|'),'g');
 export function translate(text,language='en'){
@@ -233,8 +239,18 @@ export function translate(text,language='en'){
  return text.replace(matcher,key=>en.get(key));
 }
 export function setupI18n(doc){
- let language='en';try{if(doc.defaultView.localStorage.getItem('jijing-language')==='zh')language='zh';}catch{}
+ let language='en';try{if(doc.defaultView.localStorage.getItem('jijing-language-v3')==='zh')language='zh';}catch{}
  const textSources=new WeakMap(),attributeSources=new WeakMap();
+ const seed=doc.getElementById('jijing-copy-seed');
+ if(seed){
+  const locate=path=>path.reduce((node,i)=>node?.childNodes[i],doc.body);
+  for(const row of JSON.parse(seed.textContent)){
+   const node=locate(row.path);if(!node)continue;
+   if(row.attr){const output=node.getAttribute(row.attr);if(output===translate(row.source)){
+    const records=attributeSources.get(node)||{};records[row.attr]={source:row.source,output};attributeSources.set(node,records);
+   }}else if(node.nodeValue===translate(row.source))textSources.set(node,{source:row.source,output:node.nodeValue});
+  }
+ }
  let observer;
  const protectedElement=el=>el?.closest('script,style,textarea,input,[data-user-content]');
  function apply(){
@@ -261,6 +277,22 @@ export function setupI18n(doc){
   observer?.observe(doc.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['aria-label','placeholder','alt','title']});
  }
  observer=new doc.defaultView.MutationObserver(apply);
- doc.addEventListener('click',event=>{const button=event.target.closest('[data-language]');if(!button)return;language=button.dataset.language;try{doc.defaultView.localStorage.setItem('jijing-language',language);}catch{}apply();});
+ doc.addEventListener('click',event=>{const button=event.target.closest('[data-language]');if(!button)return;language=button.dataset.language;try{doc.defaultView.localStorage.setItem('jijing-language-v3',language);}catch{}apply();});
  apply();return {apply,get language(){return language;}};
+}
+
+// English is present in the HTML before any JS executes. Keep source copy for switching.
+export function primeEnglish(doc){
+ const records=[];
+ function visit(node,path){
+  if(node.nodeType===3&&node.nodeValue.trim()&&!node.parentElement.closest('script,style,textarea,input,[data-user-content]')){
+   const source=node.nodeValue,output=translate(source);if(source!==output){records.push({path,source});node.nodeValue=output;}
+  }
+  if(node.nodeType===1){for(const attr of ['aria-label','placeholder','alt','title'])if(node.hasAttribute(attr)){
+   const source=node.getAttribute(attr),output=translate(source);if(source!==output){records.push({path,attr,source});node.setAttribute(attr,output);}
+  }}
+  [...node.childNodes].forEach((child,i)=>visit(child,[...path,i]));
+ }
+ visit(doc.body,[]);doc.documentElement.lang='en';doc.getElementById('ice-jade-sanctuary').lang='en';
+ const seed=doc.createElement('script');seed.type='application/json';seed.id='jijing-copy-seed';seed.textContent=JSON.stringify(records).replace(/</g,'\\u003c');doc.body.append(seed);
 }

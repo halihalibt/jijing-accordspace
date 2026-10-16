@@ -1,4 +1,3 @@
-import {setupI18n} from './i18n.js';
 import {names,roster,domain,conditions,worlds,clauses,createDemo,sealDemo,compileDemo,waiveDemo,approveDemo,stateHash,canonical} from './engine.js';
 import {makeWallet,verifyDeployment,readSession,readHash,readClient,readReceipt,SOURCE_HASH} from './client.js';
 const q=s=>document.querySelector(s), all=s=>[...document.querySelectorAll(s)];
@@ -58,4 +57,3 @@ q('#dismiss-guide').addEventListener('click',()=>{q('#first-visit').hidden=true;
 q('#skip-to-app').addEventListener('click',e=>{e.preventDefault();if(q('#ij-scroll-panel').hidden)q('.ij-open-scroll').click();});
 q('#ij-scroll-panel').addEventListener('keydown',e=>{if(e.key!=='Tab')return;const focus=all('#ij-scroll-panel button:not([disabled]),#ij-scroll-panel a,#ij-scroll-panel input,#ij-scroll-panel textarea,#ij-scroll-panel summary').filter(el=>!el.closest('[hidden]')&&el.getClientRects().length);const first=focus[0],last=focus.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}});
 renderDemo();updateWallet();
-setupI18n(document);

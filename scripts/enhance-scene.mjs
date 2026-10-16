@@ -1,0 +1,18 @@
+// Build-time changes to the derived scene; the approved reference stays immutable.
+export function enhanceScene(v){
+ v=v.replace('precision mediump float;varying vec2 v;uniform sampler2D tex;', 'precision highp float;varying vec2 v;uniform sampler2D tex;');
+ v=v.replace('(1.+zoom*.78)', '(1.+zoom*.115)');
+ v=v.replace("zoomTarget=inside?1:0;root.classList", "zoomTarget=inside?1:0;root.dispatchEvent(new CustomEvent('jijing:flight',{detail:{inside}}));root.classList");
+ v=v.replace("vec3 col=texture2D(tex,clamp(uv,.002,.998)).rgb;",`vec2 px=vec2(1./1400.,1./876.);vec3 col=texture2D(tex,clamp(uv,.002,.998)).rgb;
+      vec3 near=texture2D(tex,clamp(uv+vec2(px.x,0.),.002,.998)).rgb+texture2D(tex,clamp(uv-vec2(px.x,0.),.002,.998)).rgb+texture2D(tex,clamp(uv+vec2(0.,px.y),.002,.998)).rgb+texture2D(tex,clamp(uv-vec2(0.,px.y),.002,.998)).rgb;
+      col=clamp(col*1.32-near*.08,0.,1.);`);
+ v=v.replace("const ratio=Math.min(devicePixelRatio||1,1.5)","const ratio=Math.min(devicePixelRatio||1,2,Math.sqrt(6500000/Math.max(1,w*h)))");
+ v=v.replaceAll('w*Math.min(ratio,1)','w*ratio').replaceAll('h*Math.min(ratio,1)','h*ratio').replace('now-drawAt>40','now-drawAt>16');
+ v=v.replace('transform:scale(1.65)','transform:scale(1.115)');
+ v=v.replace("    const removal=new MutationObserver", `    root.addEventListener('jijing:resonance',()=>{if(!audioOn)enableAudio();chime(scale[4],.07);ripple(.68,.42,1.3);});
+    root.addEventListener('jijing:flight',()=>{if(!audioOn||!audio||reduced)return;const at=audio.currentTime,s=track(audio.createBufferSource()),f=audio.createBiquadFilter(),g=audio.createGain();s.buffer=noise;f.type='bandpass';f.Q.value=.7;f.frequency.setValueAtTime(350,at);f.frequency.exponentialRampToValueAtTime(2300,at+.8);f.frequency.exponentialRampToValueAtTime(550,at+1.9);g.gain.setValueAtTime(.0001,at);g.gain.linearRampToValueAtTime(.09,at+.65);g.gain.exponentialRampToValueAtTime(.0001,at+2.1);s.connect(f);f.connect(g);g.connect(dry);g.connect(wet);s.start(at);s.stop(at+2.2);string(scale[0],at,.05);string(scale[6],at+.45,.04);});
+    const removal=new MutationObserver`);
+ const sword=`<svg viewBox="-18 -48 36 100" aria-hidden="true"><defs><linearGradient id="sword-jade" x1="0" y1="0" x2="1" y2=".5"><stop stop-color="#b3dcd9"/><stop offset=".48" stop-color="#fbfff3"/><stop offset=".52" stop-color="#74acb5"/><stop offset="1" stop-color="#d5f5e7"/></linearGradient></defs><path d="M0-46 5-29 4 18 0 25-4 18-5-29Z" fill="url(#sword-jade)" stroke="#e8fff4" stroke-width=".6"/><path d="M0-39V19" stroke="#fff" stroke-width=".8"/><path d="M-13 21Q0 16 13 21L11 25Q0 22-11 25Z" fill="#b1dbd3" stroke="#edfff2" stroke-width=".8"/><path d="M-2 24H2V41L0 45-2 41Z" fill="#5c919d" stroke="#d6f6e8" stroke-width=".8"/><path d="M0 43Q9 49 2 54" fill="none" stroke="#caefe0" stroke-width="1"/></svg>`;
+ const additions=`<canvas id="sword-trails" aria-hidden="true"></canvas><div id="jade-sword" aria-hidden="true">${sword}</div><div id="flight-sword" aria-hidden="true">${sword.replaceAll('sword-jade','flight-jade')}</div><div class="echo-garden" aria-label="Jade echoes"><button class="jade-echo" data-echo="0" aria-label="Trace the first jade echo"><span>雪</span><i></i></button><button class="jade-echo" data-echo="1" aria-label="Trace the second jade echo"><span>月</span><i></i></button><button class="jade-echo" data-echo="2" aria-label="Trace the third jade echo"><span>山</span><i></i></button><div class="echo-readout"><span id="echo-count">0 / 3</span><span data-echo-copy>寻三缕玉音</span><button id="reset-echoes" hidden>再听一次 ↺</button></div></div>`;
+ return v.replace('  <div class="ij-flash"></div>','  <div class="ij-flash"></div>'+additions);
+}

@@ -518,3 +518,38 @@ width:calc(100% - 20px)}
 animation:none!important;
 transition:none!important}
 }
+/* V3 · jade seals, sword flight and crisp rendering. */
+#ice-jade-sanctuary .ij-header-actions{display:flex;align-items:center;gap:14px}
+#ice-jade-sanctuary .scene-language{position:static;inset:auto;display:flex;gap:2px;padding:4px;background:linear-gradient(135deg,#dcf6eac9,#8fbdc2bb);border:1px solid #d6f7e6a6;border-radius:20px 5px 20px 5px;box-shadow:inset 0 1px 2px #fafff2b3,0 4px 14px #10384628;backdrop-filter:none}
+#ice-jade-sanctuary .scene-language button{min-width:42px;min-height:36px;padding:7px 10px;border-radius:14px 3px 14px 3px;background:transparent;color:#194b58;font:600 14px/1.3 var(--sans);letter-spacing:.03em;touch-action:manipulation}
+#ice-jade-sanctuary .scene-language button[aria-pressed=true]{background:linear-gradient(140deg,#315e6d,#204854)!important;color:#f0fff1!important;box-shadow:inset 0 1px #e2ffed30,0 1px 2px #15374645}
+#ice-jade-sanctuary .ij-header{z-index:15}
+#ice-jade-sanctuary .ij-photo{image-rendering:auto}
+#ice-jade-sanctuary[data-realm=inner] .ij-photo{filter:saturate(.97) hue-rotate(2deg)}
+#ice-jade-sanctuary[data-realm=inner] .ij-heading{opacity:.8;transform:translate(-10px,-6px)}
+#ice-jade-sanctuary .first-visit{right:42px;bottom:176px;width:290px;padding:12px 0 12px 18px;border:0;border-left:1px solid #d6f5e6a6;border-radius:0;background:transparent;box-shadow:none;color:#f4fff4;text-shadow:0 1px 5px #123b50;font-size:14px}
+#ice-jade-sanctuary .first-visit b{font:500 21px/1.4 Georgia,serif}
+#ice-jade-sanctuary #ij-scroll-panel{background:linear-gradient(125deg,#f0f8ec,#d2e6de 66%,#c5dfdb);border-radius:38px 12px 38px 12px;border-color:#edfff1;box-shadow:inset 2px 2px #fff9,inset -2px -2px #60929335,0 30px 100px #0b2c4770}
+#ice-jade-sanctuary .workspace-top{background:linear-gradient(110deg,#f3faec,#cce3d8)}
+#sword-trails{position:absolute;inset:0;width:100%;height:100%;z-index:6;pointer-events:none}
+#jade-sword,#flight-sword{position:absolute;left:0;top:0;z-index:8;width:22px;height:60px;opacity:0;pointer-events:none;transform-origin:50% 45%;will-change:transform;filter:drop-shadow(0 0 5px #c8ffe4b0)}
+#jade-sword svg,#flight-sword svg{width:100%;height:100%;overflow:visible}
+#flight-sword{z-index:7;width:70px;height:190px;margin-left:-35px;margin-top:-95px;transform-origin:50% 50%;filter:drop-shadow(0 0 12px #c8ffe4a0)}
+.echo-garden{position:absolute;inset:0;pointer-events:none;z-index:7}
+#ice-jade-sanctuary .jade-echo{position:absolute;pointer-events:auto;display:grid;place-items:center;width:46px;height:62px;border:1px solid #e2ffeb8c;border-radius:25px 5px;background:linear-gradient(145deg,#e4fff02b,#619ca53b);box-shadow:inset 0 1px 4px #ffffff75,0 0 26px #aeeed530;transform:rotate(12deg);transition:background .4s,box-shadow .4s;animation:jade-drift 5s ease-in-out infinite;touch-action:manipulation;cursor:pointer}
+#ice-jade-sanctuary .jade-echo span{font:22px JadeSerif,serif;transform:rotate(-12deg);color:#e6fff1;text-shadow:0 1px 7px #0b384f}
+.jade-echo i{position:absolute;inset:-7px;border:1px solid #d6f8e349;border-radius:30px 6px}
+.jade-echo[data-echo="0"]{left:50%;top:28%;animation-delay:-1.2s!important}
+.jade-echo[data-echo="1"]{left:79%;top:38%;animation-delay:-3s!important}
+.jade-echo[data-echo="2"]{left:60%;top:60%}
+#ice-jade-sanctuary .jade-echo:hover,#ice-jade-sanctuary .jade-echo[data-collected=true]{background:linear-gradient(135deg,#f0fff3bd,#92c4cbbf);box-shadow:inset 0 1px 4px #fff,0 0 42px #c0ffed8f}
+#ice-jade-sanctuary .jade-echo[data-collected=true] span{color:#295f6a;text-shadow:none}
+.echo-readout{position:absolute;left:68%;top:73%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;white-space:nowrap;font:13px/1.6 var(--sans);letter-spacing:.05em;color:#effff3;text-shadow:0 1px 7px #15394b}
+#echo-count{font:italic 23px/1.5 Georgia,serif}
+#ice-jade-sanctuary #reset-echoes{pointer-events:auto;background:#346b7880;border:1px solid #e2ffeb8c;padding:8px 13px;border-radius:20px 4px;font:13px var(--sans);min-height:36px}
+@keyframes jade-drift{0%,100%{translate:0 0}50%{translate:0 -10px}}
+@keyframes ij-cross{0%{opacity:0}30%{opacity:.2}70%{opacity:.08}100%{opacity:0}}
+#ice-jade-sanctuary[data-scroll=open] .echo-garden,#ice-jade-sanctuary[data-scroll=open] #jade-sword,#ice-jade-sanctuary[data-scroll=open] #flight-sword{visibility:hidden}
+@media(max-width:760px){#ice-jade-sanctuary .ij-header-actions{gap:8px}#ice-jade-sanctuary .ij-brand{gap:8px}#ice-jade-sanctuary .ij-brand small{font-size:9px;letter-spacing:.04em}#ice-jade-sanctuary .scene-language{padding:3px}#ice-jade-sanctuary .scene-language button{min-width:34px;min-height:34px;padding:7px;font-size:12px}#ice-jade-sanctuary .ij-audio{padding:9px;min-height:42px;font-size:13px}#ice-jade-sanctuary .ij-wave{display:none}.jade-echo[data-echo="0"]{left:48%;top:27%}.jade-echo[data-echo="1"]{left:82%;top:43%}.jade-echo[data-echo="2"]{left:62%;top:60%}.echo-readout{left:62%;top:75%;gap:8px;font-size:11px;flex-wrap:wrap;justify-content:center;white-space:normal;width:230px}#ice-jade-sanctuary .first-visit{right:20px;bottom:155px;width:205px;font-size:13px}#ice-jade-sanctuary .first-visit b{font-size:18px}#ice-jade-sanctuary #ij-scroll-panel{border-radius:22px 8px}}
+@media(prefers-reduced-motion:reduce){#ice-jade-sanctuary .jade-echo{animation:none!important}#jade-sword{filter:none}}
+@media(max-width:560px){#ice-jade-sanctuary .ij-brand small{display:none}#ice-jade-sanctuary .ij-header{gap:10px}#ice-jade-sanctuary .ij-audio{font-size:12px}}

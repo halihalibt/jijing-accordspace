@@ -9,7 +9,7 @@
     "assets/jade-original.ttf": "4ce5036fce148243d385e4b8c1986b80104ba2a13549dfadcb8ca3348032f462",
     "src/visual-original.html": "82928eeb9ea59e1f3c2fbe8f981f5e7c07a5e57c8f3eb0732c5724305f6a69ae"
   },
-  "visual_transform": "Extract embedded font and original WebP to local asset files; original CSS/shader/audio preserved; replace old text-condensing scroll with product panel.",
+  "visual_transform": "Approved source and assets remain immutable; derived build extracts original scene styles, replaces the product panel and applies scripts/enhance-scene.mjs for resolution, restrained magnification and sword/echo hooks; src/flight.js adds local scene interactions.",
   "chain_id": 61999,
   "rpc": "https://studio.genlayer.com/api",
   "deployed": false,

@@ -1,70 +1,29 @@
 {
-  "format": "bundle-summary-v2",
-  "source_inputs": {
-    "src/i18n.js": {
-      "bytes": 21323,
-      "imports": [],
-      "format": "esm"
-    },
-    "src/engine.js": {
-      "bytes": 5118,
-      "imports": [],
-      "format": "esm"
-    },
-    "src/client.js": {
-      "bytes": 4844,
-      "imports": [
-        {
-          "path": "node_modules/genlayer-js/dist/index.js",
-          "kind": "import-statement",
-          "original": "genlayer-js"
-        },
-        {
-          "path": "node_modules/genlayer-js/dist/chains/index.js",
-          "kind": "import-statement",
-          "original": "genlayer-js/chains"
-        },
-        {
-          "path": "node_modules/genlayer-js/dist/types/index.js",
-          "kind": "import-statement",
-          "original": "genlayer-js/types"
-        },
-        {
-          "path": "src/engine.js",
-          "kind": "import-statement",
-          "original": "./engine.js"
-        }
-      ],
-      "format": "esm"
-    },
-    "src/app.js": {
-      "bytes": 18335,
-      "imports": [
-        {
-          "path": "src/i18n.js",
-          "kind": "import-statement",
-          "original": "./i18n.js"
-        },
-        {
-          "path": "src/engine.js",
-          "kind": "import-statement",
-          "original": "./engine.js"
-        },
-        {
-          "path": "src/client.js",
-          "kind": "import-statement",
-          "original": "./client.js"
-        }
-      ],
-      "format": "esm"
-    }
+  "format": "fingerprinted-browser-bundles-v3",
+  "manifest": {
+    "scene": "scene.0aa0f62d685b.css",
+    "product": "product.20eba9c2bd94.css",
+    "ui": "ui.5d79f4b0d8a3.js",
+    "app": "app.7a7fdb327d74.js"
   },
-  "outputs": {
-    "dist/app.js": {
-      "bytes": 578913,
-      "entryPoint": "src/app.js",
-      "imports": [],
-      "exports": []
+  "bundles": {
+    "ui": {
+      "bytes": 33320,
+      "entry": "src/bootstrap.js",
+      "source_inputs": [
+        "src/i18n.js",
+        "src/flight.js",
+        "src/bootstrap.js"
+      ]
+    },
+    "app": {
+      "bytes": 550327,
+      "entry": "src/app.js",
+      "source_inputs": [
+        "src/engine.js",
+        "src/client.js",
+        "src/app.js"
+      ]
     }
   }
 }

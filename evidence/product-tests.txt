@@ -2,26 +2,27 @@
 > jijing-accordspace@1.0.0 test
 > node tests/all.mjs
 
-✔ three-way conflict has all deletion witnesses and correction sets (4.539329ms)
-✔ owner-only waiver, stale confirmations and unanimous same-world commit (2.498536ms)
-✔ waiver invalidates accumulated approvals even if feasible result is unchanged (1.418247ms)
-✔ 64th bit remains exact through native JSON and solver (0.447679ms)
-✔ exhaustive independent set oracle for 4-world families of up to 3 clauses (51.994562ms)
-✔ tutorial hashes match Python canonical core fixtures exactly (2.272293ms)
-✔ world order is Cartesian and input state remains immutable (0.424295ms)
-✔ complete source SHA matches the pinned canonical contract (0.477943ms)
-✔ unarmed writes denied before any send (0.532424ms)
-✔ one allowed request, no leader-only or rotations, second write blocked (0.831623ms)
-✔ SDK fallback cannot issue another signing request (0.418466ms)
-✔ changed account and wrong chain block signing even without provider events (0.243589ms)
-✔ provider events invalidate local authorization (0.157211ms)
-✔ parallel double click cannot pass preflight twice (0.329685ms)
-✔ synthetic DOM: original scene + scroll open/close, tutorial lifecycle, mode separation and no-wallet error (722.779595ms)
-ℹ tests 15
+✔ three-way conflict has all deletion witnesses and correction sets (4.980883ms)
+✔ owner-only waiver, stale confirmations and unanimous same-world commit (3.559366ms)
+✔ waiver invalidates accumulated approvals even if feasible result is unchanged (1.956038ms)
+✔ 64th bit remains exact through native JSON and solver (0.539945ms)
+✔ exhaustive independent set oracle for 4-world families of up to 3 clauses (58.696674ms)
+✔ tutorial hashes match Python canonical core fixtures exactly (2.307375ms)
+✔ world order is Cartesian and input state remains immutable (0.886585ms)
+✔ complete source SHA matches the pinned canonical contract (0.382573ms)
+✔ unarmed writes denied before any send (0.662554ms)
+✔ one allowed request, no leader-only or rotations, second write blocked (0.496841ms)
+✔ SDK fallback cannot issue another signing request (0.285179ms)
+✔ changed account and wrong chain block signing even without provider events (0.357055ms)
+✔ provider events invalidate local authorization (0.194486ms)
+✔ parallel double click cannot pass preflight twice (0.351057ms)
+✔ served browser bundles: English before scripts; independent language UI; complete negotiation; no Node globals (808.614469ms)
+✔ served scene bundle: sword follows, flight terminates, echoes replay and UI opens independently of SDK (110.665945ms)
+ℹ tests 16
 ℹ suites 0
-ℹ pass 15
+ℹ pass 16
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 1087.2652
+ℹ duration_ms 1328.294355
