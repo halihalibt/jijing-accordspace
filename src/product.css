@@ -553,3 +553,61 @@ transition:none!important}
 @media(max-width:760px){#ice-jade-sanctuary .ij-header-actions{gap:8px}#ice-jade-sanctuary .ij-brand{gap:8px}#ice-jade-sanctuary .ij-brand small{font-size:9px;letter-spacing:.04em}#ice-jade-sanctuary .scene-language{padding:3px}#ice-jade-sanctuary .scene-language button{min-width:34px;min-height:34px;padding:7px;font-size:12px}#ice-jade-sanctuary .ij-audio{padding:9px;min-height:42px;font-size:13px}#ice-jade-sanctuary .ij-wave{display:none}.jade-echo[data-echo="0"]{left:48%;top:27%}.jade-echo[data-echo="1"]{left:82%;top:43%}.jade-echo[data-echo="2"]{left:62%;top:60%}.echo-readout{left:62%;top:75%;gap:8px;font-size:11px;flex-wrap:wrap;justify-content:center;white-space:normal;width:230px}#ice-jade-sanctuary .first-visit{right:20px;bottom:155px;width:205px;font-size:13px}#ice-jade-sanctuary .first-visit b{font-size:18px}#ice-jade-sanctuary #ij-scroll-panel{border-radius:22px 8px}}
 @media(prefers-reduced-motion:reduce){#ice-jade-sanctuary .jade-echo{animation:none!important}#jade-sword{filter:none}}
 @media(max-width:560px){#ice-jade-sanctuary .ij-brand small{display:none}#ice-jade-sanctuary .ij-header{gap:10px}#ice-jade-sanctuary .ij-audio{font-size:12px}}
+/* V4 · three ascensions, one ridiculous cut, an impossible second world. */
+#ice-jade-sanctuary .ij-landscape,#ice-jade-sanctuary .ij-photo{transform:translate3d(var(--shake-x,0px),var(--shake-y,0px),0) scale(var(--rush,1));transition:opacity .5s;transform-origin:68% 42%}
+#jade-sword{width:30px;height:66px;transition:width .2s,height .2s}
+#ice-jade-sanctuary[data-sword-level="1"] #jade-sword{width:43px;height:86px;filter:drop-shadow(0 0 9px #98f5ff)}
+#ice-jade-sanctuary[data-sword-level="2"] #jade-sword{width:60px;height:108px;filter:drop-shadow(0 0 12px #d3bcff)}
+#ice-jade-sanctuary[data-sword-level="3"] #jade-sword{width:78px;height:140px;filter:drop-shadow(0 0 15px #ffe4ed)}
+#flight-sword{width:100px;height:220px;margin-left:-50px;margin-top:-110px}
+#cosmic-blade{position:absolute;left:0;top:0;width:clamp(260px,32vw,650px);height:150vh;margin-left:calc(clamp(260px,32vw,650px) / -2);margin-top:-75vh;z-index:12;pointer-events:none;opacity:0;will-change:transform;filter:drop-shadow(0 0 15px #d7e4ff) drop-shadow(0 0 45px #c4b7e060)}
+#cosmic-blade svg{width:100%;height:100%;overflow:visible}
+#world-fragments{position:absolute;inset:0;z-index:8;pointer-events:none}
+.reality-shard{position:absolute;inset:0;background:url('./assets/ice-jade-environment.webp') 61% center/cover no-repeat;opacity:0;will-change:transform}
+#ice-jade-sanctuary[data-shattered=true] .reality-shard{animation:world-tear 1.65s cubic-bezier(.16,.67,.32,1) var(--shard-delay) both}
+@keyframes world-tear{0%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}20%{opacity:1}100%{opacity:0;transform:translate(var(--shard-x),var(--shard-y)) rotate(var(--shard-turn)) scale(.68)}}
+#reality-scar{position:absolute;left:-25%;top:48%;width:150%;height:3px;transform:rotate(-36deg);background:#fff7df;box-shadow:0 0 9px 4px #e0c7ff,0 0 50px 15px #c9e9ff;z-index:10;pointer-events:none;opacity:0}
+#ice-jade-sanctuary[data-cat-phase=slash] #reality-scar,#ice-jade-sanctuary[data-cat-phase=hitstop] #reality-scar{opacity:1}
+.impact-vignette{position:absolute;inset:0;z-index:14;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 68% 42%,#fbf9e055,transparent 36%,#27234665);transition:opacity .14s}
+#ice-jade-sanctuary[data-cat-phase=hitstop] .impact-vignette{opacity:1}
+#ice-jade-sanctuary[data-cat-phase] #sword-trails{z-index:11}
+#upgrade-toast{position:absolute;z-index:16;left:50%;top:14%;transform:translate(-50%,16px);opacity:0;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:8px;width:min(600px,90%);text-align:center;color:#f8fff0;text-shadow:0 2px 12px #173748;transition:opacity .2s,transform .2s}
+#upgrade-toast.visible{opacity:1;transform:translate(-50%,0)}
+.upgrade-index{font:12px var(--sans);letter-spacing:.3em}
+#upgrade-name{font:500 clamp(26px,3vw,45px)/1.2 Georgia,JadeSerif,serif;letter-spacing:.04em}
+#upgrade-description{font:15px/1.5 var(--sans)}
+#cataclysm-copy{position:absolute;left:7%;bottom:24%;z-index:13;max-width:70%;display:flex;flex-direction:column;gap:16px;color:#fff7ef;opacity:0;pointer-events:none;text-shadow:0 2px 20px #353a64;transition:opacity .15s}
+#cataclysm-copy.visible{opacity:1}
+#cataclysm-kicker{font:600 13px var(--sans);letter-spacing:.2em}
+#cataclysm-title{font:500 clamp(46px,7vw,110px)/.98 Georgia,JadeSerif,serif;letter-spacing:-.05em;max-width:800px;text-wrap:balance}
+#cataclysm-subtitle{font:18px var(--sans)}
+#ice-jade-sanctuary[data-cat-phase=fracture] #cataclysm-copy,#ice-jade-sanctuary[data-cat-phase=transit] #cataclysm-copy{opacity:0}
+#ice-jade-sanctuary[data-cat-phase]:not([data-cat-phase=arrived]) .echo-garden,#ice-jade-sanctuary[data-cat-phase]:not([data-cat-phase=arrived]) .first-visit{opacity:0;pointer-events:none}
+#ice-jade-sanctuary[data-cat-phase]:not([data-cat-phase=arrived]) .jade-echo{pointer-events:none}
+.impossible-world{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at 70% 25%,#ddd2ff,#8bbccf 47%,#25486c);opacity:0;overflow:hidden;pointer-events:none;transition:opacity 1.2s}
+.cosmic-landscape{position:absolute;inset:-5%;width:110%;height:110%;max-width:none;object-fit:cover;object-position:62% center;transform:translate(var(--cosmic-pan-x,0px),var(--cosmic-pan-y,0px)) rotate(var(--cosmic-tilt,0deg)) scale(1.05);transition:transform 1.6s cubic-bezier(.22,.7,.18,1)}
+.cosmic-atmosphere{position:absolute;inset:0;background:linear-gradient(90deg,#23294755,transparent 55%),linear-gradient(0deg,#242e6199,transparent 40%)}
+.impossible-orbit{position:absolute;left:51%;top:39%;width:60vw;height:15vw;border:1px solid #f6e6ff7d;border-radius:50%;transform:translate(-50%,-50%) rotate(-26deg);box-shadow:0 0 18px #c8bfff25;animation:cosmic-orbit 28s linear infinite}
+.orbit-two{width:78vw;height:25vw;transform:translate(-50%,-50%) rotate(27deg);animation-direction:reverse;opacity:.5}
+@keyframes cosmic-orbit{from{rotate:0deg}to{rotate:360deg}}
+#ice-jade-sanctuary[data-shattered=true] .impossible-world,#ice-jade-sanctuary[data-world=cosmic] .impossible-world{opacity:1}
+#ice-jade-sanctuary[data-shattered=true] .ij-landscape,#ice-jade-sanctuary[data-shattered=true] .ij-photo{opacity:0!important}
+#ice-jade-sanctuary[data-shattered=true] .ij-heading,#ice-jade-sanctuary[data-shattered=true] .ij-gate-caption,#ice-jade-sanctuary[data-world=cosmic] .ij-side-mark,#ice-jade-sanctuary[data-world=cosmic] .echo-garden{visibility:hidden}
+.otherworld-title{position:absolute;left:7%;top:24%;z-index:3;color:#fff5ed;pointer-events:none;opacity:0;translate:0 30px;transition:opacity 1.3s,translate 1.3s;text-shadow:0 2px 15px #242f53}
+.otherworld-title>span{font:12px var(--sans);letter-spacing:.2em}
+#ice-jade-sanctuary .otherworld-title h2{font:500 clamp(40px,5.3vw,80px)/1.03 Georgia,JadeSerif,serif;letter-spacing:-.04em;margin:22px 0;text-wrap:balance;max-width:610px}
+.otherworld-title p{font:17px var(--sans)}
+#ice-jade-sanctuary[data-world=cosmic] .otherworld-title{opacity:1;translate:0 0}
+.cosmic-controls{position:absolute;z-index:16;right:40px;bottom:42px;display:flex;gap:12px;flex-wrap:wrap;justify-content:end;max-width:640px;opacity:0;visibility:hidden}
+#ice-jade-sanctuary .cosmic-controls button,#ice-jade-sanctuary #skip-cataclysm{border:1px solid #f3e7f3b3;background:linear-gradient(135deg,#e1dafbe6,#9eb6cedb);color:#303458;border-radius:24px 6px;padding:13px 19px;font:600 14px var(--sans);min-height:46px;box-shadow:inset 0 1px #fff8,0 4px 15px #222a4230;touch-action:manipulation}
+#ice-jade-sanctuary[data-world=cosmic] .cosmic-controls{opacity:1;visibility:visible}
+#skip-cataclysm{position:absolute;z-index:19;right:36px;bottom:36px;visibility:hidden}
+#ice-jade-sanctuary[data-cat-phase]:not([data-cat-phase=arrived]) #skip-cataclysm{visibility:visible}
+#ice-jade-sanctuary[data-world=cosmic] .ij-caption-row{visibility:hidden}
+#ice-jade-sanctuary[data-world=cosmic] .ij-controls{max-width:400px;flex-wrap:wrap}
+#ice-jade-sanctuary[data-world=cosmic] .ij-study-label{display:none}
+#ice-jade-sanctuary[data-scroll=open] .cosmic-controls,#ice-jade-sanctuary[data-scroll=open] .otherworld-title,#ice-jade-sanctuary[data-scroll=open] #skip-cataclysm,#ice-jade-sanctuary[data-scroll=open] #upgrade-toast,#ice-jade-sanctuary[data-scroll=open] #cataclysm-copy{visibility:hidden}
+@media(max-width:900px){.cosmic-controls{right:20px;bottom:110px;max-width:360px;gap:8px}#ice-jade-sanctuary .cosmic-controls button{font-size:12px;padding:11px 14px;min-height:44px}.otherworld-title{left:6%;top:25%}#ice-jade-sanctuary .otherworld-title h2{max-width:75vw;font-size:clamp(38px,7vw,60px)}#cataclysm-copy{left:6%;max-width:85%;bottom:29%}#cataclysm-title{font-size:clamp(43px,9vw,75px)}#cataclysm-subtitle{font-size:15px}#upgrade-toast{top:18%}#upgrade-description{font-size:13px}.echo-readout{width:300px;max-width:90vw;white-space:normal;flex-wrap:wrap;justify-content:center;gap:8px}}
+@media(prefers-reduced-motion:reduce){.reality-shard{display:none}#cosmic-blade,#reality-scar,.impact-vignette{display:none}.impossible-orbit{animation:none!important}}
+
+#ice-jade-sanctuary[data-world=cosmic] #world-fragments{visibility:hidden}

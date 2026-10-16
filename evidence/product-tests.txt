@@ -2,27 +2,28 @@
 > jijing-accordspace@1.0.0 test
 > node tests/all.mjs
 
-✔ three-way conflict has all deletion witnesses and correction sets (4.980883ms)
-✔ owner-only waiver, stale confirmations and unanimous same-world commit (3.559366ms)
-✔ waiver invalidates accumulated approvals even if feasible result is unchanged (1.956038ms)
-✔ 64th bit remains exact through native JSON and solver (0.539945ms)
-✔ exhaustive independent set oracle for 4-world families of up to 3 clauses (58.696674ms)
-✔ tutorial hashes match Python canonical core fixtures exactly (2.307375ms)
-✔ world order is Cartesian and input state remains immutable (0.886585ms)
-✔ complete source SHA matches the pinned canonical contract (0.382573ms)
-✔ unarmed writes denied before any send (0.662554ms)
-✔ one allowed request, no leader-only or rotations, second write blocked (0.496841ms)
-✔ SDK fallback cannot issue another signing request (0.285179ms)
-✔ changed account and wrong chain block signing even without provider events (0.357055ms)
-✔ provider events invalidate local authorization (0.194486ms)
-✔ parallel double click cannot pass preflight twice (0.351057ms)
-✔ served browser bundles: English before scripts; independent language UI; complete negotiation; no Node globals (808.614469ms)
-✔ served scene bundle: sword follows, flight terminates, echoes replay and UI opens independently of SDK (110.665945ms)
-ℹ tests 16
+✔ three-way conflict has all deletion witnesses and correction sets (5.004334ms)
+✔ owner-only waiver, stale confirmations and unanimous same-world commit (2.886026ms)
+✔ waiver invalidates accumulated approvals even if feasible result is unchanged (1.327554ms)
+✔ 64th bit remains exact through native JSON and solver (0.446157ms)
+✔ exhaustive independent set oracle for 4-world families of up to 3 clauses (44.921018ms)
+✔ tutorial hashes match Python canonical core fixtures exactly (2.11315ms)
+✔ world order is Cartesian and input state remains immutable (0.253603ms)
+✔ complete source SHA matches the pinned canonical contract (0.374912ms)
+✔ unarmed writes denied before any send (0.584701ms)
+✔ one allowed request, no leader-only or rotations, second write blocked (0.526565ms)
+✔ SDK fallback cannot issue another signing request (0.272561ms)
+✔ changed account and wrong chain block signing even without provider events (0.249417ms)
+✔ provider events invalidate local authorization (0.145364ms)
+✔ parallel double click cannot pass preflight twice (0.293451ms)
+✔ served browser bundles: English before scripts; independent language UI; complete negotiation; no Node globals (791.26051ms)
+✔ served scene bundle: upgrades alter geometry; third echo cuts jade and reveals playable second world (187.020355ms)
+✔ reduced motion: third echo still reaches the other world and return always resets the scene (49.732342ms)
+ℹ tests 17
 ℹ suites 0
-ℹ pass 16
+ℹ pass 17
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 1328.294355
+ℹ duration_ms 1384.714894

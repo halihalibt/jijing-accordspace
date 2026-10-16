@@ -18,3 +18,7 @@ FINALIZED/MAJORITY_AGREE/success without actual receipt plus readback.
 
 Current source hash is in SOURCE_MANIFEST.json. Checkpoint and remaining work:
 docs/PROJECT_CHECKPOINT.md. No Portal submission was authorized in this batch.
+
+The user authorized V4 local sword upgrades, jade shattering and a generated
+second world. Preserve the original reference and assets; these local scene
+interactions remain independent of participant contract conditions.

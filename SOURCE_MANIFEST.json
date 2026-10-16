@@ -15,5 +15,16 @@
   "deployed": false,
   "real_model_execution": false,
   "portal_submitted": false,
-  "sdk": "genlayer-js@1.1.8"
+  "sdk": "genlayer-js@1.1.8",
+  "second_world": {
+    "asset": "assets/inverted-star-sea.webp",
+    "sha256": "e23b90fcbd7790b597d70a115d7a9c32df2a9db3389e0ef54d0e8a6570f5d6b6",
+    "dimensions": [
+      1672,
+      941
+    ],
+    "generation": "built-in image generation",
+    "prompt": "assets/INVERTED_STAR_SEA_PROMPT.md",
+    "behavior": "local three-level sword ascension, cataclysm, second world and replay; independent of contract state"
+  }
 }

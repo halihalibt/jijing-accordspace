@@ -1,17 +1,18 @@
 {
-  "format": "fingerprinted-browser-bundles-v3",
+  "format": "fingerprinted-browser-bundles-v4",
   "manifest": {
     "scene": "scene.0aa0f62d685b.css",
-    "product": "product.20eba9c2bd94.css",
-    "ui": "ui.5d79f4b0d8a3.js",
+    "product": "product.ffb899dd3811.css",
+    "ui": "ui.b41cd00018a8.js",
     "app": "app.7a7fdb327d74.js"
   },
   "bundles": {
     "ui": {
-      "bytes": 33320,
+      "bytes": 42988,
       "entry": "src/bootstrap.js",
       "source_inputs": [
         "src/i18n.js",
+        "src/sword-forms.js",
         "src/flight.js",
         "src/bootstrap.js"
       ]

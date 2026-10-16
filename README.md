@@ -8,7 +8,10 @@ continuous Web Audio ambience. Open the workspace to use the product. The near-f
 in English and supports an EN / 中文 switch that remembers your choice. It uses
 17px body text and responsive desktop/mobile layouts. A jade sword follows the
 cursor, entry launches a sword-flight transition, and three replayable jade echoes
-invite exploration. English UI is present before JS loads. Fingerprinted assets
+invite exploration. Each echo evolves the sword; the third automatically summons
+a cosmic megasword, fractures the gate and reveals an impossible second world.
+Invert gravity, summon sword rain or return to replay. See docs/UI_REWORK_V4.md.
+English UI is present before JS loads. Fingerprinted assets
 and an independent scene bundle keep language controls separate from the SDK.
 
 ## What works
@@ -32,7 +35,7 @@ blocked (HTTP 403) although `eth_chainId` returned 61999 on 2026-10-15 UTC.
 The browser wallet paths are prepared and tested with provider doubles; their
 real execution needs a local user wallet.
 
-`npm test` runs 16 assertion groups including a 4,369-family independent set
+`npm test` runs 17 assertion groups including a 4,369-family independent set
 oracle, Python/JavaScript hash parity, 64-bit masks, sender changes, request
 budgets, duplicate-send protection and a synthetic DOM lifecycle. Synthetic DOM
 is not a browser render, WebGL or real-audio test. This run had no supported

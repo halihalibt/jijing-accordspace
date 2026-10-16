@@ -1,5 +1,27 @@
 // UI copy only. Contract/user text, form values, receipts and identifiers are never translated.
 const copy = `
+收集玉音 · 升级飞剑|||Collect an echo. Upgrade your sword.
+先收集空中的三枚玉音。每一枚都会进化你的飞剑。第三枚会打破这方天地。|||Find three floating echoes. Each one evolves your sword. The third breaks the world.
+初醒 · 一线玉锋|||AWAKENED / JADE EDGE
+雪魄 · 双生寒刃|||SNOWSOUL / TWIN FANGS
+月轮 · 九霄剑阵|||MOONWHEEL / ORBITAL BLADES
+宇宙无敌大飞剑|||THE COSMIC MEGASWORD
+三枚玉音 · 三次进化|||Three echoes. Three ascensions.
+双刃觉醒 · 再寻一音|||Twin blades awakened. Find another echo.
+剑阵就位 · 最后一音|||Sword formation ready. One echo remains.
+禁制解除 · 退后亿点|||Limiter removed. Step back. Much further.
+一把不够，那就长出两把。|||One blade? Grow another.
+让剑绕着剑公转。|||Make swords orbit other swords.
+此剑的尺寸已经违反常识。|||This sword has outgrown common sense.
+第三枚玉音 · 禁制解除|||THIRD ECHO / LIMITER REMOVED
+玉门说：你礼貌吗？|||The gate would like to file a complaint.
+天碎以后，|||Heaven broke.
+鱼开始公转。|||The fish took over.
+重力只是一个建议。|||Gravity is only a suggestion.
+颠倒重力 ↻|||Invert gravity ↻
+让天上下剑雨|||Make it rain swords
+假装无事发生 · 返回|||Pretend nothing happened · Return
+跳过动画 · 直接穿越 ↗|||Skip to the other world ↗
 寻三缕玉音|||Trace three jade echoes
 三音已合 · 再御剑一程|||Three echoes, one resonance. Fly again.
 再听一次 ↺|||Listen again ↺

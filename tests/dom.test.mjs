@@ -4,9 +4,9 @@ import fs from 'node:fs';
 import {JSDOM} from 'jsdom';
 const manifest=JSON.parse(fs.readFileSync('dist/asset-manifest.json','utf8'));
 const html=fs.readFileSync('dist/index.html','utf8');
-function page(){
+function page(reduced=false){
  const dom=new JSDOM(html,{url:'https://jijing.test/',runScripts:'outside-only',pretendToBeVisual:true}),w=dom.window,frames=[];
- w.matchMedia=()=>({matches:false});w.ResizeObserver=class{observe(){}disconnect(){}};
+ w.matchMedia=()=>({matches:reduced});w.ResizeObserver=class{observe(){}disconnect(){}};
  w.requestAnimationFrame=cb=>(frames.push(cb),frames.length);w.HTMLCanvasElement.prototype.getContext=()=>null;
  w.TextEncoder=TextEncoder;w.TextDecoder=TextDecoder;w.structuredClone=structuredClone;
  Object.defineProperty(w.crypto,'subtle',{value:crypto.subtle});
@@ -58,13 +58,32 @@ test('served browser bundles: English before scripts; independent language UI; c
  assert.equal(q('[data-product-css]').previousElementSibling.getAttribute('href'),'./'+manifest.scene);
  q('.ij-close').click();assert.equal(q('#ij-scroll-panel').hidden,true);assert.equal(w.document.activeElement,q('.ij-open-scroll'));dom.window.close();
 });
-test('served scene bundle: sword follows, flight terminates, echoes replay and UI opens independently of SDK',async()=>{
+test('served scene bundle: upgrades alter geometry; third echo cuts jade and reveals playable second world',async()=>{
  const {dom,w,q,flush,frame}=page();w.eval(fs.readFileSync('dist/'+manifest.ui,'utf8'));
  const root=q('#ice-jade-sanctuary');root.dispatchEvent(new w.MouseEvent('pointermove',{clientX:500,clientY:300,bubbles:true}));frame(w.performance.now()+20);
  assert.equal(q('#jade-sword').style.opacity,'1');assert.match(q('#jade-sword').style.transform,/translate3d/);
  const start=w.performance.now();q('.ij-enter').click();await flush();assert.equal(root.dataset.realm,'inner');assert.equal(root.dataset.flightCount,'1');
- frame(start+900);assert.notEqual(q('#flight-sword').style.opacity,'0');frame(start+2400);assert.equal(root.dataset.flight,undefined);assert.equal(q('#flight-sword').style.opacity,'0');
- for(let n=0;n<3;n++)q('[data-echo="'+n+'"]').click();await flush();assert.equal(root.dataset.echoes,'3');assert.equal(q('#echo-count').textContent,'3 / 3');assert.equal(q('#reset-echoes').hidden,false);
- q('[data-echo="0"]').click();assert.equal(q('#echo-count').textContent,'3 / 3');q('#reset-echoes').click();assert.equal(root.dataset.echoes,'0');assert.equal(q('#reset-echoes').hidden,true);
- q('.ij-open-scroll').click();frame(start+2600);assert.equal(q('#ij-scroll-panel').hidden,false);assert.equal(q('#jade-sword').style.opacity,'0');q('.ij-close').click();assert.equal(q('#ij-scroll-panel').hidden,true);dom.window.close();
+ frame(start+400);assert.equal(root.dataset.flightPhase,'burst');assert.equal(q('#flight-sword').style.opacity,'1');frame(start+1400);assert.equal(root.dataset.flight,undefined);
+ const forms=[q('#jade-sword').innerHTML];
+ for(let n=0;n<2;n++){
+  q('[data-echo="'+n+'"]').click();await flush();assert.equal(root.dataset.swordLevel,String(n+1));forms.push(q('#jade-sword').innerHTML);
+  assert.match(q('#upgrade-name').textContent,n===0?/TWIN FANGS/:/ORBITAL BLADES/);
+ }
+ const hit=w.performance.now();q('[data-echo="2"]').click();await flush();forms.push(q('#jade-sword').innerHTML);
+ assert.equal(new Set(forms).size,4);assert.equal(root.dataset.cataclysmCount,'1');assert.equal(root.dataset.swordLevel,'3');assert.equal(root.dataset.world,'jade');
+ q('[data-echo="2"]').click();assert.equal(root.dataset.cataclysmCount,'1');
+ frame(hit+1000);assert.equal(root.dataset.catPhase,'windup');assert.equal(q('#cosmic-blade').style.opacity,'1');
+ frame(hit+1450);assert.equal(root.dataset.catPhase,'hitstop');assert.equal(root.dataset.hitstop,'true');
+ frame(hit+2000);assert.equal(root.dataset.catPhase,'fracture');assert.equal(root.dataset.shattered,'true');assert.equal(root.dataset.hitstop,'false');
+ frame(hit+3500);assert.equal(root.dataset.catPhase,'transit');frame(hit+5100);assert.equal(root.dataset.world,'cosmic');assert.equal(root.dataset.hitstop,undefined);
+ assert.equal(q('#cosmic-blade').style.opacity,'0');assert.match(q('.otherworld-title').textContent,/The fish took over/);
+ q('#invert-gravity').click();assert.equal(root.dataset.gravity,'180');q('#invert-gravity').click();assert.equal(root.dataset.gravity,'360');
+ q('#sword-rain').click();assert.equal(root.dataset.swordRainCount,'1');
+ q('.ij-open-scroll').click();frame(hit+5200);assert.equal(q('#ij-scroll-panel').hidden,false);assert.equal(q('#jade-sword').style.opacity,'0');q('.ij-close').click();
+ q('#return-jade').click();assert.equal(root.dataset.world,'jade');assert.equal(root.dataset.swordLevel,'0');assert.equal(root.dataset.shattered,undefined);assert.equal(q('#echo-count').textContent,'0 / 3');
+ for(let n=0;n<3;n++)q('[data-echo="'+n+'"]').click();assert.equal(root.dataset.cataclysmCount,'2');q('#skip-cataclysm').click();assert.equal(root.dataset.world,'cosmic');assert.equal(root.dataset.shattered,'true');q('#return-jade').click();assert.equal(root.dataset.hitstop,undefined);dom.window.close();
+});
+test('reduced motion: third echo still reaches the other world and return always resets the scene',()=>{
+ const {dom,w,q,frame}=page(true);w.eval(fs.readFileSync('dist/'+manifest.ui,'utf8'));const root=q('#ice-jade-sanctuary');const start=w.performance.now();
+ for(let n=0;n<3;n++)q('[data-echo="'+n+'"]').click();frame(start+800);assert.equal(root.dataset.world,'cosmic');assert.equal(root.dataset.hitstop,undefined);q('#return-jade').click();assert.equal(root.dataset.world,'jade');assert.equal(root.dataset.swordLevel,'0');assert.equal(root.dataset.catPhase,undefined);dom.window.close();
 });
