@@ -1,5 +1,9 @@
 # Jijing product checkpoint — 2026-10-16 Asia/Shanghai
 
+Scene V3: fingerprinted assets, static English HTML, independent language UI,
+crisper rendering, sword tracking/flight and replayable jade echoes.
+See UI_REWORK_V3.md for evidence and limitations.
+
 Workspace V2 rework: default-English EN / 中文 UI, near-full viewport, larger
 type and opaque jade surfaces. See UI_REWORK_V2.md for cause, changes and limits.
 
@@ -18,8 +22,8 @@ read client, source verification, wallet-only writes, request budgeting,
 account/chain invalidation, SDK fallback-send guard, manual receipt export,
 source copy, build and submission drafts.
 
-15 product assertion groups pass, including 4,369 set-oracle families and
-synthetic DOM lifecycle. A: 46 tests + 36 SDK subtests, lint and ABI pass.
+16 product assertion groups pass, including 4,369 set-oracle families and
+served-bundle synthetic DOM lifecycle, flight and echoes. A: 46 tests + 36 SDK subtests, lint and ABI pass.
 Synthetic DOM is not a fresh browser render. The managed preview browser skill
 is unavailable in this run; no preview server or substitute browser was started.
 Desktop/mobile appearance, real WebGL/audio and wallet signing need acceptance.
