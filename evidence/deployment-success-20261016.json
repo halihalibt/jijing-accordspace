@@ -1,0 +1,113 @@
+{
+  "evidence_kind": "selected fields from user-exported finalized deployment receipt; no new RPC query",
+  "original_export_sha256": "4fd173587146086705307496552d614482e9e9ff22753373b277e194bd49245e",
+  "network": "Stable Studionet",
+  "chain_id": 61999,
+  "source_sha256": "84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72",
+  "receipt": {
+    "hash": "0x38396b6bdb9490404d8edb0c3da172e1317555675d6b408274de91c0cb97463b",
+    "from_address": "0x22Acaa233b7b985b36ef168F2DE9295334065B15",
+    "to_address": "0x0F4A3Aa94A55ef41e8f4108a1513c7a4cB8e1ffe",
+    "statusName": "FINALIZED",
+    "status": 7,
+    "result_name": "MAJORITY_AGREE",
+    "consensus_history": {
+      "consensus_results": [
+        {
+          "leader_result": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "genvm_result": {
+                "stderr": "",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "genvm_result": {
+                "stderr": "",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              }
+            }
+          ],
+          "validator_results": [
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "genvm_result": {
+                "stderr": "",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "genvm_result": {
+                "stderr": "",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "genvm_result": {
+                "stderr": "",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "genvm_result": {
+                "stderr": "",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "last_round": {
+      "validator_votes_name": [
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "AGREE"
+      ]
+    }
+  },
+  "code_sha256": "84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72"
+}

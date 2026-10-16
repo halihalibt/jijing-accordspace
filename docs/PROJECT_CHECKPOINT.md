@@ -1,3 +1,21 @@
+# Current receipt and wallet checkpoint — 2026-10-16
+
+Read RECEIPT_QUORUM_FIX.md first. User-exported receipts now show a successful
+corrected deployment and create_session, with the latter misclassified by the
+old UI due to nonfatal validator quorum cancellations. This patch fixes only
+the receipt classifier and tests; canonical contract/art are unchanged.
+
+Contract: `0x0F4A3Aa94A55ef41e8f4108a1513c7a4cB8e1ffe`.
+Session: `jijing_20261016_1442`.
+A: `0x22acaa233b7b985b36ef168f2de9295334065b15`.
+B: `0x49ce61764cca0c15a79e2d98baa535fc7547eb3a`.
+25 frontend assertion groups pass. Two of the eight recovery requests used;
+six remain. Original failed deployment separately recorded. No new chain
+write by this patch. Next: public COLLECTING readback, then A seal, one request.
+No actual model compilation, complete E2E or Portal submission yet.
+
+The historical checkpoint below predates these newly supplied receipts.
+
 # Jijing checkpoint — deployment header recovery
 
 2026-10-16 Asia/Shanghai. Current canonical SHA256:

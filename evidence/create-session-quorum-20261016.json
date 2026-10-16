@@ -1,0 +1,144 @@
+{
+  "evidence_kind": "selected fields from user-exported finalized create_session receipt; no new RPC query",
+  "original_export_sha256": "c6f1b47548305cb67e39d1ad823429f83f60b4b0a80686d0949a6938fb2bb7da",
+  "network": "Stable Studionet",
+  "chain_id": 61999,
+  "source_sha256": "84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72",
+  "sign_request": {
+    "time": "2026-10-16T06:46:44.112Z",
+    "method": "create_session",
+    "args": [
+      "jijing_20261016_1442",
+      [
+        "0x22acaa233b7b985b36ef168f2de9295334065b15",
+        "0x49ce61764cca0c15a79e2d98baa535fc7547eb3a"
+      ],
+      "[{\"id\":\"x\",\"meaning\":\"是否启用夜间场\",\"values\":[0,1]}]"
+    ],
+    "phase": "SIGN_REQUEST",
+    "account": "0x22acaa233b7b985b36ef168f2de9295334065b15",
+    "address": "0x0F4A3Aa94A55ef41e8f4108a1513c7a4cB8e1ffe",
+    "source_sha256": "84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72"
+  },
+  "receipt": {
+    "hash": "0x415551aa94660bd78a93188eaff50a238c1004b9703ab497055f6bf95f171080",
+    "from_address": "0x22Acaa233b7b985b36ef168F2DE9295334065B15",
+    "to_address": "0x0F4A3Aa94A55ef41e8f4108a1513c7a4cB8e1ffe",
+    "statusName": "FINALIZED",
+    "status": 7,
+    "result_name": "MAJORITY_AGREE",
+    "consensus_history": {
+      "consensus_results": [
+        {
+          "leader_result": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "genvm_result": {
+                "stderr": "",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "idle",
+              "execution_result": "ERROR",
+              "result": "AmlkbGU=",
+              "genvm_result": {
+                "stderr": "Validator execution cancelled after quorum",
+                "stdout": "",
+                "raw_error": {
+                  "fatal": false,
+                  "causes": [
+                    "VALIDATOR_QUORUM_REACHED"
+                  ]
+                },
+                "error_code": "CONSENSUS_VALIDATOR_QUORUM_REACHED"
+              }
+            }
+          ],
+          "validator_results": [
+            {
+              "mode": "validator",
+              "vote": "idle",
+              "execution_result": "ERROR",
+              "result": "AmlkbGU=",
+              "genvm_result": {
+                "stderr": "Validator execution cancelled after quorum",
+                "stdout": "",
+                "raw_error": {
+                  "fatal": false,
+                  "causes": [
+                    "VALIDATOR_QUORUM_REACHED"
+                  ]
+                },
+                "error_code": "CONSENSUS_VALIDATOR_QUORUM_REACHED"
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "genvm_result": {
+                "stderr": "",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "genvm_result": {
+                "stderr": "",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "genvm_result": {
+                "stderr": "",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "last_round": {
+      "validator_votes_name": [
+        "IDLE",
+        "IDLE",
+        "AGREE",
+        "AGREE",
+        "AGREE"
+      ],
+      "validator_votes": [
+        5,
+        5,
+        1,
+        1,
+        1
+      ],
+      "votes_revealed": "5"
+    }
+  }
+}

@@ -14,9 +14,9 @@ function page(reduced=false){
  const scene=[...w.document.querySelectorAll('script')].find(s=>!s.src&&s.type!=='application/json');w.eval(scene.textContent);
  return {dom,w,frames,q:s=>w.document.querySelector(s),flush:()=>new Promise(r=>setTimeout(r,25)),frame:now=>{const callbacks=frames.splice(0);callbacks.forEach(cb=>cb(now));}};
 }
-test('served app shows the recorded deployment error and prevents another unarmed signature',async()=>{
+test('served app correctly presents recorded failure and successful quorum idle; neither repeats signing',async()=>{
  const {dom,w,q,flush}=page();
- const actual=JSON.parse(fs.readFileSync('evidence/deployment-failure-20261016.json','utf8')).receipt;
+ let actual=JSON.parse(fs.readFileSync('evidence/deployment-failure-20261016.json','utf8')).receipt;
  let sends=0,reads=0;
  w.okxwallet={on(){},async request({method}){
   if(['eth_accounts','eth_requestAccounts'].includes(method))return [actual.from_address];
@@ -38,6 +38,13 @@ test('served app shows the recorded deployment error and prevents another unarme
  assert.equal(reads,1);assert.equal(sends,0);
  q('[data-language=en]').click();await flush();assert.match(q('#notice').textContent,/execution failed/);
  assert.match(q('#receipt-result').textContent,/MAJORITY_AGREE/);
+ actual=JSON.parse(fs.readFileSync('evidence/create-session-quorum-20261016.json','utf8')).receipt;
+ q('#receipt-hash').value=actual.hash;q('#check-receipt').click();await flush();await flush();
+ assert.match(q('#notice').textContent,/successful execution and majority agreement/);
+ assert.equal(q('#notice').classList.contains('error'),false);assert.equal(q('#deploy').disabled,true);
+ assert.equal(reads,2);assert.equal(sends,0);
+ q('[data-language=zh]').click();await flush();assert.match(q('#notice').textContent,/执行成功且多数共识一致/);
+ assert.match(q('#receipt-result').textContent,/CONSENSUS_VALIDATOR_QUORUM_REACHED/);
  dom.window.close();
 });
 test('served browser bundles: English before scripts; independent language UI; complete negotiation; no Node globals',async()=>{

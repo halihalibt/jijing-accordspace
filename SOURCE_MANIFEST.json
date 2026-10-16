@@ -12,7 +12,7 @@
   "visual_transform": "Approved source and assets remain immutable; derived build extracts original scene styles, replaces the product panel and applies scripts/enhance-scene.mjs for resolution, restrained magnification and sword/echo hooks; src/flight.js adds local scene interactions.",
   "chain_id": 61999,
   "rpc": "https://studio.genlayer.com/api",
-  "deployed": false,
+  "deployed": true,
   "real_model_execution": false,
   "portal_submitted": false,
   "sdk": "genlayer-js@1.1.8",
@@ -28,7 +28,12 @@
     "behavior": "local three-level sword ascension, cataclysm, second world and replay; independent of contract state"
   },
   "previous_failed_source_sha256": "f99a6395f539c718027f2b6ab39801ccc22c2c0197fb7cbc27307b64563e886f",
-  "deployment_attempts": 1,
-  "successful_deployments": 0,
-  "last_deployment_outcome": "FINALIZED / MAJORITY_AGREE / ERROR / invalid_contract"
+  "deployment_attempts": 2,
+  "successful_deployments": 1,
+  "last_deployment_outcome": "FINALIZED / MAJORITY_AGREE / SUCCESS",
+  "deployment_receipt_verified": true,
+  "deployment_address": "0x0F4A3Aa94A55ef41e8f4108a1513c7a4cB8e1ffe",
+  "session_readback_verified": false,
+  "current_session_id": "jijing_20261016_1442",
+  "evidence_scope": "user-exported finalized receipts; public session readback pending"
 }
