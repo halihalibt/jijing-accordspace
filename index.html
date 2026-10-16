@@ -1,87 +1,12 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#548c9e"><meta name="description" content="霁境 · 冰玉之间，共同求解。GenLayer 多人条件协商的空间体验。"><title>霁境 · 合意方可成境 | Jijing AccordSpace</title><link rel="icon" href="./assets/favicon.svg"><link rel="stylesheet" href="./product.css"></head><body><a class="skip" href="#ij-scroll-panel" id="skip-to-app">进入协商玉简</a><div id="ice-jade-sanctuary" lang="zh-CN" data-realm="outer" data-scroll="closed">
-  <style>
-    @font-face{font-family:JadeSerif;src:url(./assets/jade-original.ttf) format("truetype");font-weight:400 500;font-display:swap;}
-    #ice-jade-sanctuary{--ij-deep:#143f50;--ij-milk:#e6f4ed;--ij-ice:#b7dfe1;position:relative;isolation:isolate;overflow:hidden;min-height:800px;background:#548c9e;color:#effcf9;font-family:JadeSerif,"Noto Serif SC","Songti SC","SimSun",serif;border-radius:6px}
-    #ice-jade-sanctuary *{box-sizing:border-box}
-    #ice-jade-sanctuary [hidden]{display:none!important}
-    #ice-jade-sanctuary button{font:inherit;color:inherit}
-    #ice-jade-sanctuary .ij-photo,#ice-jade-sanctuary .ij-landscape,#ice-jade-sanctuary .ij-particles{position:absolute;inset:0;width:100%;height:100%}
-    #ice-jade-sanctuary .ij-photo{object-fit:cover;object-position:61% center;z-index:-4;transition:transform 3s cubic-bezier(.22,.61,.36,1),filter 3s}
-    #ice-jade-sanctuary[data-webgl=ready] .ij-photo{opacity:0;transform:none!important}
-    #ice-jade-sanctuary[data-realm=inner] .ij-photo{transform:scale(1.65);transform-origin:68% 42%;filter:saturate(.8) hue-rotate(5deg)}
-    #ice-jade-sanctuary .ij-landscape{z-index:-3;pointer-events:none}
-    #ice-jade-sanctuary .ij-shade{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#133c505e,transparent 44%),linear-gradient(180deg,#123b4d42,transparent 20%,transparent 64%,#124757b3 100%)}
-    #ice-jade-sanctuary .ij-particles{z-index:4;pointer-events:none}
-    #ice-jade-sanctuary .ij-world{position:absolute;inset:0;z-index:2;touch-action:pan-y;cursor:grab}
-    #ice-jade-sanctuary .ij-world.is-holding{cursor:grabbing;touch-action:none}
-    #ice-jade-sanctuary .ij-header{position:relative;z-index:10;padding:26px 30px;display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:12px}
-    #ice-jade-sanctuary .ij-brand{display:flex;align-items:center;gap:13px;letter-spacing:2px}
-    #ice-jade-sanctuary .ij-seal{display:grid;place-items:center;width:31px;height:35px;border:1px solid #d9f0ed9c;border-radius:8px 3px 8px 3px;font-size:16px;line-height:1;box-shadow:inset 0 0 11px #d0ffff1c;color:#eaf8ed}
-    #ice-jade-sanctuary .ij-brand small{font-family:Arial,sans-serif;letter-spacing:3px;font-size:11px;color:#d8eeee}
-    #ice-jade-sanctuary .ij-audio{display:flex;align-items:center;gap:10px;background:#16455430;border:1px solid #d1f0ee65;border-radius:40px;min-height:43px;padding:10px 15px;font-size:12px;box-shadow:inset 0 1px 0 #ffffff40;backdrop-filter:blur(14px)}
-    #ice-jade-sanctuary .ij-wave{display:flex;align-items:center;height:16px;gap:3px}
-    #ice-jade-sanctuary .ij-wave i{width:1px;height:5px;background:#e1fff7;border-radius:4px}
-    #ice-jade-sanctuary .ij-wave i:nth-child(2){height:13px;animation-delay:-.7s!important}
-    #ice-jade-sanctuary .ij-wave i:nth-child(3){height:9px;animation-delay:-.2s!important}
-    #ice-jade-sanctuary .ij-wave i:nth-child(4){height:15px;animation-delay:-.5s!important}
-    #ice-jade-sanctuary .ij-audio[aria-pressed=true] .ij-wave i{animation:ij-wave 1.6s ease-in-out infinite alternate}
-    #ice-jade-sanctuary .ij-heading{position:absolute;z-index:3;left:9%;top:21%;width:190px;height:365px;pointer-events:none;transform:translate(var(--ij-tx,0px),var(--ij-ty,0px));transition:transform 1s cubic-bezier(.19,1,.22,1),opacity 1.3s}
-    #ice-jade-sanctuary .ij-heading h2{margin:0;font-weight:400;font-size:116px;line-height:1.22;letter-spacing:0;filter:drop-shadow(0 4px 10px #133c5060);color:#e8fff3}
-    #ice-jade-sanctuary .ij-heading h2 span{display:block;width:max-content;text-shadow:0 1px 0 #fff,0 -2px 1px #8fc0c390}
-    #ice-jade-sanctuary .ij-heading h2 span:nth-child(2){margin-left:39px;margin-top:-5px;color:#cce9e4}
-    #ice-jade-sanctuary .ij-heading .ij-title-en{position:absolute;left:7px;top:305px;font:11px/1.8 Arial,sans-serif;letter-spacing:4px;white-space:nowrap;color:#e4f5f1}
-    #ice-jade-sanctuary .ij-verse{position:absolute;left:185px;top:24px;writing-mode:vertical-rl;font-size:13px;line-height:2.2;letter-spacing:6px;margin:0;color:#e4f8f2;text-shadow:0 2px 5px #173b50}
-    #ice-jade-sanctuary .ij-side-mark{position:absolute;right:29px;top:34%;z-index:3;writing-mode:vertical-rl;letter-spacing:5px;font-size:11px;color:#effff8d9;pointer-events:none}
-    #ice-jade-sanctuary .ij-side-mark:before{content:"";display:inline-block;height:55px;width:1px;background:linear-gradient(transparent,#e4fff7a0);margin-bottom:17px}
-    #ice-jade-sanctuary .ij-gate-caption{position:absolute;left:68%;top:64%;transform:translateX(-50%);text-align:center;z-index:3;pointer-events:none;transition:opacity .8s}
-    #ice-jade-sanctuary .ij-gate-caption span{display:block;font-size:11px;letter-spacing:3px;text-shadow:0 2px 7px #15404f}
-    #ice-jade-sanctuary .ij-gate-caption b{font-size:12px;letter-spacing:7px;font-weight:400;display:block;margin-bottom:9px;color:#eefff5}
-    #ice-jade-sanctuary[data-realm=inner] .ij-heading{opacity:.35;transform:translate(-20px,-12px) scale(.94)}
-    #ice-jade-sanctuary[data-realm=inner] .ij-gate-caption{opacity:0}
-    #ice-jade-sanctuary .ij-hold-meter{position:absolute;z-index:3;width:90px;height:90px;left:calc(68% - 45px);top:calc(40% - 45px);border:1px solid #eafff24d;border-radius:50%;pointer-events:none;opacity:0;transition:opacity .3s;box-shadow:0 0 35px #e6ffff33,inset 0 0 20px #b5ffff33}
-    #ice-jade-sanctuary .ij-hold-meter:after{content:"";position:absolute;inset:9px;border:1px solid #eafff2aa;border-radius:50%;transform:scale(var(--ij-hold,.4));opacity:var(--ij-hold,0);box-shadow:0 0 20px #eaffff77}
-    #ice-jade-sanctuary[data-holding=true] .ij-hold-meter{opacity:1}
-    #ice-jade-sanctuary .ij-bottom{position:relative;z-index:10;padding:0 30px 25px;margin-top:571px}
-    #ice-jade-sanctuary .ij-caption-row{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:23px}
-    #ice-jade-sanctuary .ij-state{font-size:12px;letter-spacing:4px;margin:0 0 9px}
-    #ice-jade-sanctuary .ij-instruction{font-size:11px;letter-spacing:1px;margin:0;color:#e1f0ee;line-height:1.9}
-    #ice-jade-sanctuary .ij-signature{font:11px/1.7 Arial,JadeSerif,sans-serif;letter-spacing:2px;color:#d3e9e9;text-align:right}
-    #ice-jade-sanctuary .ij-controls{display:flex;gap:12px;align-items:center}
-    #ice-jade-sanctuary .ij-enter{border:1px solid #f1fff9b3;background:linear-gradient(140deg,#f0fff4f0,#c3e3dcf2 55%,#a8cdd0f2);color:#174b56;border-radius:70px;padding:15px 29px;min-height:52px;display:flex;align-items:center;justify-content:center;gap:25px;font-size:14px;letter-spacing:3px;box-shadow:inset 1px 2px 1px #ffffffd9,inset -2px -3px 6px #568c925e,0 5px 0 #8db9b9,0 14px 32px #12394855;transition:transform .4s,box-shadow .4s}
-    #ice-jade-sanctuary .ij-enter:hover{transform:translateY(-3px);box-shadow:inset 1px 2px 1px #fff,inset -2px -3px 6px #568c925e,0 7px 0 #8db9b9,0 18px 40px #12394877}
-    #ice-jade-sanctuary .ij-enter:active{transform:translateY(3px)}
-    #ice-jade-sanctuary .ij-enter b{font-size:20px;font-weight:400;letter-spacing:0}
-    #ice-jade-sanctuary .ij-open-scroll{min-height:52px;padding:13px 23px;background:#275e6d7a;border:1px solid #d8f5f178;border-radius:60px;color:#f0fff8;font-size:13px;letter-spacing:3px;backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 #ebffff40;transition:background .3s,transform .3s}
-    #ice-jade-sanctuary .ij-open-scroll:hover{background:#79b5bc70;transform:translateY(-2px)}
-    #ice-jade-sanctuary .ij-study-label{margin-left:auto;align-self:end;font:11px/1.7 Arial,JadeSerif,"Microsoft YaHei",sans-serif;letter-spacing:1px;color:#dceeea;text-align:right}
-    #ice-jade-sanctuary .ij-scroll{position:absolute;z-index:20;left:50%;top:50%;transform:translate(-50%,-43%) scale(.94);width:min(540px,calc(100% - 36px));padding:28px 30px 24px;border-radius:45px 15px 45px 15px;background:linear-gradient(120deg,#f0fbf3fa,#c9e6e1f7 60%,#afd3d4f7);color:#21535d;border:1px solid #edfff7;box-shadow:inset 2px 3px 4px #ffffffd9,inset -3px -4px 12px #507d8466,0 9px 0 #8eb6b9a6,0 35px 100px #102e4480;backdrop-filter:blur(20px);animation:ij-unfurl 1s cubic-bezier(.19,1,.22,1) both}
-    #ice-jade-sanctuary .ij-scroll-head{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #517d7b3d;padding-bottom:16px}
-    #ice-jade-sanctuary .ij-scroll-head span{font-size:12px;letter-spacing:4px}
-    #ice-jade-sanctuary .ij-close{border:1px solid #64919080;background:#e9f8ee;color:#24535d;border-radius:50%;width:40px;height:40px;font:22px Arial,sans-serif;flex-shrink:0}
-    #ice-jade-sanctuary .ij-scroll-body{display:flex;align-items:center;justify-content:center;gap:28px;padding:27px 0;min-height:220px}
-    #ice-jade-sanctuary .ij-scroll-poem{font-size:38px;letter-spacing:7px;writing-mode:vertical-rl;line-height:1.6;flex-shrink:0;color:#2b5961;text-shadow:0 1px 0 #fff}
-    #ice-jade-sanctuary .ij-original{writing-mode:vertical-rl;font-size:16px;line-height:2.5;letter-spacing:3px;margin:0;min-height:178px;max-height:210px}
-    #ice-jade-sanctuary .ij-short{font-size:19px;letter-spacing:2px;line-height:2;max-width:240px;margin:0;animation:ij-text .7s ease both}
-    #ice-jade-sanctuary .ij-scroll-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid #517d7b3d;padding-top:17px}
-    #ice-jade-sanctuary .ij-condense{background:#295c66;color:#f0fff5;border:1px solid #47777c;border-radius:60px;padding:13px 20px;min-height:45px;font-size:13px;letter-spacing:2px;white-space:nowrap}
-    #ice-jade-sanctuary .ij-scroll-note{font-size:11px;line-height:1.8;color:#50767c;max-width:220px}
-    #ice-jade-sanctuary .ij-flash{position:absolute;inset:0;z-index:8;background:radial-gradient(ellipse at 68% 42%,#ecfff2,transparent 75%);pointer-events:none;opacity:0}
-    #ice-jade-sanctuary.is-crossing .ij-flash{animation:ij-cross 2.9s ease both}
-    @keyframes ij-wave{to{height:3px}}
-    @keyframes ij-cross{0%{opacity:0}35%{opacity:.73}100%{opacity:0}}
-    @keyframes ij-unfurl{from{opacity:0;transform:translate(-50%,-35%) perspective(800px) rotateX(18deg) scale(.8)}to{opacity:1;transform:translate(-50%,-43%) perspective(800px) rotateX(0) scale(1)}}
-    @keyframes ij-text{from{opacity:0;filter:blur(6px);transform:translateY(8px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
-    @media(max-width:650px){#ice-jade-sanctuary{min-height:780px}#ice-jade-sanctuary .ij-header{padding:22px 20px}#ice-jade-sanctuary .ij-brand{gap:9px}#ice-jade-sanctuary .ij-brand small{letter-spacing:1px}#ice-jade-sanctuary .ij-heading{left:8%;top:21%;width:140px}#ice-jade-sanctuary .ij-heading h2{font-size:88px}#ice-jade-sanctuary .ij-heading h2 span:nth-child(2){margin-left:27px}#ice-jade-sanctuary .ij-verse{left:132px;font-size:12px;letter-spacing:4px;top:13px}#ice-jade-sanctuary .ij-heading .ij-title-en{top:235px;letter-spacing:2px;font-size:11px}#ice-jade-sanctuary .ij-side-mark{right:16px;letter-spacing:3px}#ice-jade-sanctuary .ij-gate-caption{left:71%;top:62%}#ice-jade-sanctuary .ij-gate-caption b{letter-spacing:3px}#ice-jade-sanctuary .ij-gate-caption span{font-size:11px;letter-spacing:1px}#ice-jade-sanctuary .ij-bottom{padding:0 20px 23px;margin-top:558px}#ice-jade-sanctuary .ij-controls{gap:10px;flex-wrap:wrap}#ice-jade-sanctuary .ij-enter{padding:14px 22px;gap:14px;font-size:13px}#ice-jade-sanctuary .ij-open-scroll{padding:14px 18px}#ice-jade-sanctuary .ij-signature{font-size:11px;letter-spacing:1px}#ice-jade-sanctuary .ij-study-label{width:100%;text-align:left;margin:4px 0 0}#ice-jade-sanctuary .ij-scroll{padding:24px 23px 20px;border-radius:35px 12px 35px 12px}#ice-jade-sanctuary .ij-scroll-body{gap:17px}#ice-jade-sanctuary .ij-scroll-poem{font-size:29px;letter-spacing:4px}#ice-jade-sanctuary .ij-original{font-size:15px;line-height:2.2;letter-spacing:2px}#ice-jade-sanctuary .ij-scroll-foot{gap:12px}#ice-jade-sanctuary .ij-scroll-note{font-size:11px}#ice-jade-sanctuary .ij-short{font-size:17px}}
-    @media(max-width:650px){#ice-jade-sanctuary .ij-caption-row{gap:14px;align-items:flex-start}#ice-jade-sanctuary .ij-caption-row>div:first-child{min-width:0;flex:1}#ice-jade-sanctuary .ij-signature{flex:0 0 105px;max-width:105px;overflow-wrap:anywhere}}
-    @media(prefers-reduced-motion:reduce){#ice-jade-sanctuary *,#ice-jade-sanctuary *:before,#ice-jade-sanctuary *:after{animation:none!important;transition:none!important}}
-  </style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#548c9e"><meta name="description" content="霁境 · 冰玉之间，共同求解。GenLayer 多人条件协商的空间体验。"><title>Jijing · AccordSpace — Find common ground</title><link rel="icon" href="./assets/favicon.svg"><link rel="stylesheet" href="./scene.css"><link rel="stylesheet" href="./product.css"></head><body><a class="skip" href="#ij-scroll-panel" id="skip-to-app">进入协商玉简</a><div id="ice-jade-sanctuary" lang="zh-CN" data-realm="outer" data-scroll="closed">
+  
   <img class="ij-photo" src="./assets/ice-jade-environment.webp" alt="悬浮于云海的冰玉圆环，倒悬山峰与远处的东方楼阁。">
   <canvas class="ij-landscape" aria-hidden="true"></canvas>
   <div class="ij-shade"></div>
   <div class="ij-world" role="group" aria-label="拖动游移视角，轻触唤起玉纹，静止长按一点五秒穿过玉门。下方入境按钮提供同等操作。"></div>
   <canvas class="ij-particles" aria-hidden="true"></canvas>
   <aside class="first-visit" id="first-visit"><b>初至此境</b>拖动云山，轻触玉纹。长按穿境，或以按钮入境。展卷后可体验三人协商。<br><button id="dismiss-guide">知晓 · 开始探索</button></aside>
-  <header class="ij-header">
+  <div class="scene-language language-switch" role="group" aria-label="Language"><button type="button" data-language="en" aria-pressed="true">EN</button><button type="button" data-language="zh" aria-pressed="false">中文</button></div><header class="ij-header">
     <div class="ij-brand"><span class="ij-seal" aria-hidden="true">霁</span><span>霁境 <small> / ACCORDSPACE</small></span></div>
     <button type="button" class="ij-audio cursor-interaction" aria-pressed="false" aria-label="开启持续环境音乐与交互音效"><span class="ij-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="ij-audio-label">启音</span></button>
   </header>
@@ -95,9 +20,10 @@
     <div class="ij-controls"><button type="button" class="ij-enter cursor-interaction"><span class="ij-enter-label">入境 · 启音</span><b aria-hidden="true">⟶</b></button><button type="button" class="ij-open-scroll cursor-interaction" aria-expanded="false" aria-controls="ij-scroll-panel">展卷 · 共议</button><span class="ij-study-label">离线可玩 · 真实会话待部署<br>STABLE STUDIONET / 61999</span></div>
   </div>
 <section class="ij-scroll" id="ij-scroll-panel" hidden role="dialog" aria-modal="true" aria-labelledby="panel-title">
- <div class="ij-scroll-head"><div><span class="eyebrow">ACCORDSPACE / 共 同 的 边 界</span><h1 id="panel-title">合意，方可成境。</h1></div><button type="button" class="ij-close" aria-label="合上玉简">×</button></div>
+ <div class="workspace-top"><div class="ij-scroll-head"><div><span class="eyebrow">ACCORDSPACE / 共 同 的 边 界</span><h1 id="panel-title">合意，方可成境。</h1></div><div class="workspace-tools"><div class="language-switch" role="group" aria-label="Language"><button type="button" data-language="en" aria-pressed="true">EN</button><button type="button" data-language="zh" aria-pressed="false">中文</button></div><button type="button" class="ij-close" aria-label="合上玉简">×</button></div></div>
  <nav class="tabs" aria-label="体验模式"><button type="button" data-tab="demo" aria-selected="true">01 / 入门演练</button><button type="button" data-tab="live" aria-selected="false">02 / 真实会话</button><button type="button" data-tab="about" aria-selected="false">03 / 关于霁境</button></nav>
  <p id="notice" role="status" aria-live="polite">离线教程 · 固定规则 · 不调用 AI，不发送交易。</p>
+ </div><div class="workspace-body">
  <div id="demo-view" class="tab-view">
   <div class="session-intro"><div><span class="eyebrow">THE COMMON GROUND</span><h2>三人策展，一份共同认可的安排。</h2><p>先约定可选范围，再封存各自条件。条件无解时，只能由本人让步；存在方案，也须每人确认。</p></div><button type="button" id="restart" class="quiet">重启演练 ↺</button></div>
   <div class="journey" aria-label="协商进度"><span data-step="0">定界</span><i></i><span data-step="1">封存</span><i></i><span data-step="2">求解</span><i></i><span data-step="3">合意</span></div>
@@ -113,7 +39,7 @@
   <section class="receipt-well"><h3>交易记录 · 手动查询</h3><p class="small">不自动重试、重发或 Appeal。收到哈希仅表示已提交；最终验收必须核实 FINALIZED、成功执行、共识与最新读取。</p><div class="actions"><input id="receipt-hash" aria-label="交易哈希" placeholder="0x…"><button id="check-receipt" class="quiet">查询一次</button><button id="export-log" class="quiet">导出本地记录</button></div><pre id="receipt-result">尚无交易证据。</pre></section>
  </div>
  <div id="about-view" class="tab-view" hidden><div class="about-copy"><span class="eyebrow">J I J I N G / 霁 境</span><h2>让每个人的边界，<br>拥有同样的分量。</h2><p>霁境把多人协商放入同一个约定范围：独立 AI 将每条自然语言条件编译为可执行规则，代码穷举全部可选方案。当条件无法共同满足，系统列出所有最小冲突与可协商集，附具体见证。</p><p>没有人能代替别人撤回条件，没有自动选出的“最佳方案”。只有同一版本、同一方案获得所有成员确认，协议才会提交。</p><p>穷举证明只对已接受的形式规则和约定范围成立，不能证明 AI 必然理解正确，也不约束现实世界的履约。无法表达的条件进入 REVIEW_REQUIRED，仅可取消重建。</p><dl><dt>2–4</dt><dd>位参与者</dd><dt>≤64</dt><dd>个完整组合</dd><dt>≤8</dt><dd>条条件</dd></dl><p>视觉来自已认可的原始冰玉场景；环境音乐由 Web Audio 原创合成。启音后空闲仍持续，页面隐藏时静音。支持减少动态效果偏好。</p><div class="actions"><a href="https://github.com/halihalibt/accord-space-genlayer" target="_blank" rel="noreferrer">Intelligent Contracts ↗</a><a href="https://github.com/halihalibt/jijing-accordspace" target="_blank" rel="noreferrer">Projects ↗</a><a href="./docs/DEPLOYMENT_RUNBOOK.md" download>本地执行指引 ↗</a></div></div></div>
- <footer class="panel-foot"><span>霁境 / ACCORD-SPACE-V1</span><span>演练是演练，链上结果以真实读取为准。</span></footer>
+ <footer class="panel-foot"><span>霁境 / ACCORD-SPACE-V1</span><span>演练是演练，链上结果以真实读取为准。</span></footer></div>
 </section>
 
   <script>
