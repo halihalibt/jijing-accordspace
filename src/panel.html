@@ -1,7 +1,8 @@
 <section class="ij-scroll" id="ij-scroll-panel" hidden role="dialog" aria-modal="true" aria-labelledby="panel-title">
- <div class="ij-scroll-head"><div><span class="eyebrow">ACCORDSPACE / 共 同 的 边 界</span><h1 id="panel-title">合意，方可成境。</h1></div><button type="button" class="ij-close" aria-label="合上玉简">×</button></div>
+ <div class="workspace-top"><div class="ij-scroll-head"><div><span class="eyebrow">ACCORDSPACE / 共 同 的 边 界</span><h1 id="panel-title">合意，方可成境。</h1></div><div class="workspace-tools"><div class="language-switch" role="group" aria-label="Language"><button type="button" data-language="en" aria-pressed="true">EN</button><button type="button" data-language="zh" aria-pressed="false">中文</button></div><button type="button" class="ij-close" aria-label="合上玉简">×</button></div></div>
  <nav class="tabs" aria-label="体验模式"><button type="button" data-tab="demo" aria-selected="true">01 / 入门演练</button><button type="button" data-tab="live" aria-selected="false">02 / 真实会话</button><button type="button" data-tab="about" aria-selected="false">03 / 关于霁境</button></nav>
  <p id="notice" role="status" aria-live="polite">离线教程 · 固定规则 · 不调用 AI，不发送交易。</p>
+ </div><div class="workspace-body">
  <div id="demo-view" class="tab-view">
   <div class="session-intro"><div><span class="eyebrow">THE COMMON GROUND</span><h2>三人策展，一份共同认可的安排。</h2><p>先约定可选范围，再封存各自条件。条件无解时，只能由本人让步；存在方案，也须每人确认。</p></div><button type="button" id="restart" class="quiet">重启演练 ↺</button></div>
   <div class="journey" aria-label="协商进度"><span data-step="0">定界</span><i></i><span data-step="1">封存</span><i></i><span data-step="2">求解</span><i></i><span data-step="3">合意</span></div>
@@ -17,5 +18,5 @@
   <section class="receipt-well"><h3>交易记录 · 手动查询</h3><p class="small">不自动重试、重发或 Appeal。收到哈希仅表示已提交；最终验收必须核实 FINALIZED、成功执行、共识与最新读取。</p><div class="actions"><input id="receipt-hash" aria-label="交易哈希" placeholder="0x…"><button id="check-receipt" class="quiet">查询一次</button><button id="export-log" class="quiet">导出本地记录</button></div><pre id="receipt-result">尚无交易证据。</pre></section>
  </div>
  <div id="about-view" class="tab-view" hidden><div class="about-copy"><span class="eyebrow">J I J I N G / 霁 境</span><h2>让每个人的边界，<br>拥有同样的分量。</h2><p>霁境把多人协商放入同一个约定范围：独立 AI 将每条自然语言条件编译为可执行规则，代码穷举全部可选方案。当条件无法共同满足，系统列出所有最小冲突与可协商集，附具体见证。</p><p>没有人能代替别人撤回条件，没有自动选出的“最佳方案”。只有同一版本、同一方案获得所有成员确认，协议才会提交。</p><p>穷举证明只对已接受的形式规则和约定范围成立，不能证明 AI 必然理解正确，也不约束现实世界的履约。无法表达的条件进入 REVIEW_REQUIRED，仅可取消重建。</p><dl><dt>2–4</dt><dd>位参与者</dd><dt>≤64</dt><dd>个完整组合</dd><dt>≤8</dt><dd>条条件</dd></dl><p>视觉来自已认可的原始冰玉场景；环境音乐由 Web Audio 原创合成。启音后空闲仍持续，页面隐藏时静音。支持减少动态效果偏好。</p><div class="actions"><a href="https://github.com/halihalibt/accord-space-genlayer" target="_blank" rel="noreferrer">Intelligent Contracts ↗</a><a href="https://github.com/halihalibt/jijing-accordspace" target="_blank" rel="noreferrer">Projects ↗</a><a href="./docs/DEPLOYMENT_RUNBOOK.md" download>本地执行指引 ↗</a></div></div></div>
- <footer class="panel-foot"><span>霁境 / ACCORD-SPACE-V1</span><span>演练是演练，链上结果以真实读取为准。</span></footer>
+ <footer class="panel-foot"><span>霁境 / ACCORD-SPACE-V1</span><span>演练是演练，链上结果以真实读取为准。</span></footer></div>
 </section>

@@ -1,5 +1,8 @@
 # Jijing product checkpoint — 2026-10-16 Asia/Shanghai
 
+Workspace V2 rework: default-English EN / 中文 UI, near-full viewport, larger
+type and opaque jade surfaces. See UI_REWORK_V2.md for cause, changes and limits.
+
 Repository A main reviewed/merged: b08b408d425054baa4d679d959a289e8a7d5e550.
 PR #1 merged. No canonical contract changes were required.
 

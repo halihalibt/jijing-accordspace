@@ -4,7 +4,9 @@ An ice-jade spatial experience for shared-plan negotiation on GenLayer.
 
 The product preserves the approved original scene, WebGL displacement, touch
 ripples, drag/hold transitions, sculpted jade typography and user-enabled
-continuous Web Audio ambience. Open the jade scroll to use the product.
+continuous Web Audio ambience. Open the workspace to use the product. The near-full-screen workspace starts
+in English and supports an EN / 中文 switch that remembers your choice. It uses
+17px body text and responsive desktop/mobile layouts.
 
 ## What works
 
