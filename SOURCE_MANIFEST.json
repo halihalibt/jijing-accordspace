@@ -1,6 +1,6 @@
 {
   "canonical_repository": "https://github.com/halihalibt/accord-space-genlayer",
-  "canonical_commit": "cc13a2437656a074ae1fac9e061005f29aa73644",
+  "canonical_commit": "ceaef239fb4792bfb921f562cb94c1b472338be2",
   "canonical_source": "contracts/accord_space.py",
   "canonical_sha256": "84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72",
   "chain_id": 61999,
@@ -17,7 +17,9 @@
     "final_status": "COMMITTED",
     "revision": 1,
     "final_world_id": 1,
-    "final_assignment": {"x": 1}
+    "final_assignment": {
+      "x": 1
+    }
   },
   "visual_assets": {
     "ice_jade_environment": "assets/ice-jade-environment.webp",
@@ -28,5 +30,6 @@
     "path": "contracts/accord_space.py",
     "byte_identical_to_canonical": true
   },
-  "portal_submitted": false
+  "portal_submitted": false,
+  "last_documentation_checkpoint": "cc13a2437656a074ae1fac9e061005f29aa73644"
 }
