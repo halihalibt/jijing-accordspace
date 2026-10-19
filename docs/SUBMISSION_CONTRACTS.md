@@ -12,7 +12,7 @@ AccordSpace turns independently owned natural-language conditions into a shared 
 
 - `contracts/accord_space.py`
 - SHA256: `84eec53fc6d9ed0c1fc3fd30b50983dfacd1a6308ff016303840c055660e7d72`
-- Repository A commit: `cc13a2437656a074ae1fac9e061005f29aa73644`
+- Canonical source commit: `ceaef239fb4792bfb921f562cb94c1b472338be2`
 
 **Stable Studionet**
 
